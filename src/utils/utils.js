@@ -13,20 +13,12 @@ export const ROUTES = {
 
 export const themesList = [
   {
-    name: "Default Theme",
+    name: "Default Theme (not implemented)",
     id: DEFAULT_THEME,
   },
   {
     name: "Clothing Theme",
     id: "clothing_1",
-  },
-  {
-    name: "Grocery Theme",
-    id: "grocery_1",
-  },
-  {
-    name: "Food Theme",
-    id: "food_1",
   },
 ];
 

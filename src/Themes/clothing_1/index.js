@@ -7,7 +7,7 @@ import SearchBar from "ReusableThemes/SearchBar";
 import CustomButton from "./CustomButton";
 // import PromoPackagesPreview from "./PromoPackage/Preview";
 // import PromoPackageCard from "./PromoPackage/Card";
-// import ShopPresentation from "./ShopPresentation";
+import ShopPresentation from "./ShopPresentation";
 // import ProductCard from "./ProductCard";
 // import PreviewCategories from "./PreviewComponents/Categories";
 // import PreviewProducts from "./PreviewComponents/Products";
@@ -30,7 +30,7 @@ export {
   SearchBar,
   ChangeLanguageMenu,
   CustomButton,
-  // ShopPresentation,
+  ShopPresentation,
   // PromoPackagesPreview,
   // PromoPackageCard,
   // ProductCard,

@@ -1,93 +1,93 @@
-import React from 'react'
-import clsx from 'clsx'
-import { makeStyles } from '@material-ui/core/styles'
-import Grid from '@material-ui/core/Grid'
-import Typography from '@material-ui/core/Typography'
-import PaymentsMethodsIcon from '../../components/Icons/PaymentsMethodsIcon'
-import CategoriesIcon from '../../components/Icons/CategoriesIcon'
-import ShippingIcon from '../../components/Icons/ShippingIcon'
-import { capitalize } from 'lodash/string'
+import React from "react";
+import clsx from "clsx";
+import { capitalize } from "lodash/string";
+import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import PaymentsMethodsIcon from "Icons/PaymentsMethodsIcon";
+import CategoriesIcon from "Icons/CategoriesIcon";
+import ShippingIcon from "Icons/ShippingIcon";
 
 const useStyles = makeStyles((theme) => ({
   additionalInfo: {
-    padding: '24px 0',
+    padding: "24px 0",
     zIndex: 4,
-    width: '100%',
+    width: "100%",
     maxWidth: 940,
-    margin: '0px auto',
-    [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column',
-      transform: 'translateY(0%)'
-    }
+    margin: "0px auto",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+      transform: "translateY(0%)",
+    },
   },
   additionalInfoItem: {
-    display: 'flex',
-    alignItems: 'center',
-    '& svg': {
-      marginRight: 13
-    }
+    display: "flex",
+    alignItems: "center",
+    "& svg": {
+      marginRight: 13,
+    },
   },
   textBlock: {
-    display: 'flex',
-    flexDirection: 'column',
+    display: "flex",
+    flexDirection: "column",
     width: 20,
     flex: 1,
-    [theme.breakpoints.down('sm')]: {
-      width: 200
-    }
+    [theme.breakpoints.down("sm")]: {
+      width: 200,
+    },
   },
   infoTitle: {
-    marginBottom: 4
+    marginBottom: 4,
   },
   text: {
-    [theme.breakpoints.down('sm')]: {
-      whiteSpace: 'initial'
-    }
-  }
-}))
+    [theme.breakpoints.down("sm")]: {
+      whiteSpace: "initial",
+    },
+  },
+}));
 
 const AdditionalInfo = ({ shop, t, customClasses, iconColor }) => {
-  const classes = useStyles()
-  const { categories, payments, delivery_options } = shop || {}
+  const classes = useStyles();
+  const { categories, payments, delivery_options = [] } = shop || {};
 
   const paymentsActive =
     payments &&
     Object.entries(payments)
       .filter(([k, v]) => v.is_enabled)
       ?.map(([k]) => {
-        if (k.includes('_')) {
-          k = k.replace('_', ' ')
+        if (k.includes("_")) {
+          k = k.replace("_", " ");
         }
-        return capitalize(k)
+        return capitalize(k);
       })
-      ?.join(', ')
+      ?.join(", ");
 
   const deliveryActive = delivery_options
     .filter((item) => item.is_enabled)
     ?.map((item) => item.name)
-    ?.join(', ')
+    ?.join(", ");
 
-  const categoriesLength = categories?.length
+  const categoriesLength = categories?.length;
 
   const additionalInfo = [
     paymentsActive && {
-      title: t('method_payment'),
+      title: t("method_payment"),
       text: paymentsActive,
-      icon: <PaymentsMethodsIcon color={iconColor} />
+      icon: <PaymentsMethodsIcon color={iconColor} />,
     },
     deliveryActive && {
-      title: t('shipping'),
+      title: t("shipping"),
       text: deliveryActive,
-      icon: <ShippingIcon color={iconColor} />
+      icon: <ShippingIcon color={iconColor} />,
     },
     categoriesLength > 0 && {
-      title: t('category'),
-      text: `${categoriesLength} ${t('categories_available')}`,
-      icon: <CategoriesIcon color={iconColor} />
-    }
-  ].filter(Boolean)
+      title: t("category"),
+      text: `${categoriesLength} ${t("categories_available")}`,
+      icon: <CategoriesIcon color={iconColor} />,
+    },
+  ].filter(Boolean);
 
-  if (additionalInfo?.length === 0) return null
+  if (additionalInfo?.length === 0) return null;
 
   return (
     <Grid
@@ -124,7 +124,7 @@ const AdditionalInfo = ({ shop, t, customClasses, iconColor }) => {
         </Grid>
       ))}
     </Grid>
-  )
-}
+  );
+};
 
-export default AdditionalInfo
+export default AdditionalInfo;

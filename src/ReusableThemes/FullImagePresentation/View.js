@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import ReusableAdditionalInfo from '../ReusableAdditionalInfo'
-import CustomButton from '../../components/CustomButton'
+import CustomButton from 'Components/CustomButton'
 
 const useStyles = makeStyles((theme) => ({
   shopPresentationRoot: ({ url }) => ({
