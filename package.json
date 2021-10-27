@@ -1,0 +1,29 @@
+{
+  "name": "learn-starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js",
+    "build": "node trigger-build.js && next build",
+    "start": "cross-env NODE_ENV=production node server.js",
+    "clean": "rm -rf node_modules && npm cache clean --force && npm install"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.10.1",
+    "@material-ui/icons": "^4.9.1",
+    "@zeit/next-source-maps": "^0.0.4-canary.1",
+    "cross-env": "^7.0.2",
+    "express": "^4.16.2",
+    "i18next": "^19.6.0",
+    "lodash": "^4.17.4",
+    "next": "^10.0.2",
+    "next-i18next": "^4.5.0",
+    "next-images": "^1.4.0",
+    "query-string": "^6.13.1",
+    "react": "^16.13.0",
+    "react-country-flag": "^2.3.0",
+    "react-dom": "^16.13.0",
+    "rollbar-sourcemap-webpack-plugin": "^3.0.0",
+    "use-debounce": "^3.4.2"
+  }
+}
