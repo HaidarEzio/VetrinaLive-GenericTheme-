@@ -48,7 +48,19 @@ const useStyles = makeStyles((theme) => ({
 
 const AdditionalInfo = ({ shop, t, customClasses, iconColor }) => {
   const classes = useStyles();
-  const { categories, payments, delivery_options = [] } = shop || {};
+  const {
+    categories = ["1", "2", "3"],
+    payments = [
+      { is_enabled: true, name: "wffe" },
+      { is_enabled: true, name: "wffe" },
+      { is_enabled: true, name: "wffe" },
+    ],
+    delivery_options = [
+      { is_enabled: true, name: "wffe" },
+      { is_enabled: true, name: "wffe" },
+      { is_enabled: true, name: "wffe" },
+    ],
+  } = shop || {};
 
   const paymentsActive =
     payments &&

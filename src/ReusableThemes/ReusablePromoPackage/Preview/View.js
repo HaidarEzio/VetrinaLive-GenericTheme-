@@ -1,27 +1,27 @@
-import React from 'react'
-import clsx from 'clsx'
-import { Grid, Typography } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
-import CustomButton from '../../../components/CustomButton/CustomButton'
-import Container from '../../../components/Container'
+import React from "react";
+import clsx from "clsx";
+import { Grid, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import CustomButton from "Components/CustomButton/CustomButton";
+import Container from "Components/Container";
 
 const useStyles = makeStyles(() => ({
   root: {
     marginTop: 100,
-    marginBottom: 50
+    marginBottom: 50,
   },
   button: {
-    width: 'auto'
+    width: "auto",
   },
   grid: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
   card: {
-    marginRight: 40
-  }
-}))
+    marginRight: 40,
+  },
+}));
 
 const View = ({
   t,
@@ -31,9 +31,9 @@ const View = ({
   Card,
   showRedirectButton,
   title,
-  customClasses
+  customClasses,
 }) => {
-  const classes = useStyles()
+  const classes = useStyles();
   return (
     <section
       className={clsx(classes.root, _classes?.root, customClasses?.root)}
@@ -60,7 +60,7 @@ const View = ({
               type="link"
               href="/[shopKey]/packages"
               as={`/${shopKey}/packages`}
-              label={t('all_promo_packages')}
+              label={t("all_promo_packages")}
               className={clsx(classes.button, customClasses?.button)}
               labelClassName={customClasses?.buttonLabel}
             />
@@ -68,7 +68,7 @@ const View = ({
         </Grid>
       </Container>
     </section>
-  )
-}
+  );
+};
 
-export default View
+export default View;

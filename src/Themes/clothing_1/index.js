@@ -5,8 +5,8 @@ import ChangeLanguageMenu from "./ChangeLanguageMenu";
 import CustomizedActionBar from "ReusableThemes/CustomizedActionBar";
 import SearchBar from "ReusableThemes/SearchBar";
 import CustomButton from "./CustomButton";
-// import PromoPackagesPreview from "./PromoPackage/Preview";
-// import PromoPackageCard from "./PromoPackage/Card";
+import PromoPackagesPreview from "./PromoPackage/Preview";
+import PromoPackageCard from "./PromoPackage/Card";
 import ShopPresentation from "./ShopPresentation";
 // import ProductCard from "./ProductCard";
 // import PreviewCategories from "./PreviewComponents/Categories";
@@ -31,8 +31,8 @@ export {
   ChangeLanguageMenu,
   CustomButton,
   ShopPresentation,
-  // PromoPackagesPreview,
-  // PromoPackageCard,
+  PromoPackagesPreview,
+  PromoPackageCard,
   // ProductCard,
   // PreviewCategories,
   // PreviewProducts,

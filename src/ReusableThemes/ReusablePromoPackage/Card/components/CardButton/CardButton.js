@@ -1,6 +1,6 @@
-import CustomLink from '../../../../../components/CustomLink'
-import CustomButton from '../../../../../components/CustomButton/CustomButton'
-import React from 'react'
+import React from "react";
+import CustomLink from "Components/CustomLink";
+import CustomButton from "Components/CustomButton";
 
 const CardButton = ({
   shopKey,
@@ -19,11 +19,11 @@ const CardButton = ({
       <CustomButton
         backgroundColor={backgroundColor}
         className={className}
-        label={label ?? t('shop_now')}
+        label={label ?? t("shop_now")}
         {...restProps}
       />
     </CustomLink>
-  )
-}
+  );
+};
 
-export default CardButton
+export default CardButton;

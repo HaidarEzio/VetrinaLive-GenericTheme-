@@ -1,23 +1,23 @@
-import React from 'react'
-import { Grid } from '@material-ui/core'
-import makeStyles from '@material-ui/styles/makeStyles/makeStyles'
-import clsx from 'clsx'
+import React from "react";
+import clsx from "clsx";
+import { Grid } from "@material-ui/core";
+import makeStyles from "@material-ui/styles/makeStyles/makeStyles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
+    display: "flex",
     flex: 1,
-    [theme.breakpoints.down('sm')]: {
-      width: '100%'
-    }
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+    },
   },
   card: {
-    marginBottom: theme.spacing(5)
-  }
-}))
+    marginBottom: theme.spacing(5),
+  },
+}));
 
 const View = ({ children, _classes }) => {
-  const classes = useStyles()
+  const classes = useStyles();
   return (
     <Grid
       item
@@ -28,7 +28,7 @@ const View = ({ children, _classes }) => {
     >
       <div className={clsx(classes.card, _classes?.card)}>{children}</div>
     </Grid>
-  )
-}
+  );
+};
 
-export default View
+export default View;

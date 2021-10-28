@@ -1,11 +1,11 @@
-import React, { memo, useMemo } from "react";
+import React, { memo } from "react";
 import { useMediaQuery } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
 import get from "lodash/fp/get";
+import useGetCurrency from "hooks/useGetCurrency";
 
 // import { useCartStore } from '../../context/CartStore'
 // import { useShopInfoContext } from "../../context/ShopInfoStore/context";
-// import useGetCurrency from '../../hooks/useGetCurrency'
 // import useCartOnMobile from '../WebRoutes/Products/hooks/useCartOnMobile'
 // import useCategoryFilter from '../WebRoutes/Products/hooks/useCategoryFilter'
 import * as themes from "Themes/exportTheme";
@@ -26,9 +26,9 @@ const ActionBar = ({ t, mayFetch, shop, totalPrice = 100, ...rest }) => {
   // } = useCartOnMobile({
   //   t
   // })
-  // const {
-  //   currency: { symbol: currencySymbol }
-  // } = useGetCurrency()
+  const {
+    currency: { symbol: currencySymbol },
+  } = useGetCurrency({ shop });
   // const {
   //   state: { totalPrice }
   // } = useCartStore()
@@ -65,7 +65,7 @@ const ActionBar = ({ t, mayFetch, shop, totalPrice = 100, ...rest }) => {
     //toggleFilters,
     //activeFilters,
     //toggleCartDrawer: toggleDrawer,
-    //currencySymbol,
+    currencySymbol,
     //CartIcon,
     totalPriceCart,
     searchValue,
