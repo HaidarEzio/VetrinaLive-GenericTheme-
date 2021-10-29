@@ -1,56 +1,56 @@
-import { makeStyles } from '@material-ui/core/styles'
-import React, { Fragment, memo, useMemo } from 'react'
-import CardContent from '@material-ui/core/CardContent'
-import Grid from '@material-ui/core/Grid'
-import Typography from '@material-ui/core/Typography'
-import clsx from 'clsx'
-import isEmpty from 'lodash/isEmpty'
-import { sliceDescription } from '../../../../components/utils'
-import Actions from './components/Actions'
+import { makeStyles } from "@material-ui/core/styles";
+import React, { Fragment, memo, useMemo } from "react";
+import CardContent from "@material-ui/core/CardContent";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import clsx from "clsx";
+import isEmpty from "lodash/isEmpty";
+import { sliceDescription } from "Utils/utils";
+import Actions from "./components/Actions";
 
 const useStyles = makeStyles((theme) => ({
   cardContent: {
-    display: 'flex',
-    flexDirection: 'column',
+    display: "flex",
+    flexDirection: "column",
     flexGrow: 1,
-    padding: '12px 0 0',
-    '&:last-child': {
-      paddingBottom: 0
+    padding: "12px 0 0",
+    "&:last-child": {
+      paddingBottom: 0,
     },
-    [theme.breakpoints.down('xs')]: {}
+    [theme.breakpoints.down("xs")]: {},
   },
   title: theme.title({
     fontSize: 22,
-    lineHeight: '24px',
-    color: theme.palette.colors.neutral.black
+    lineHeight: "24px",
+    color: theme.palette.colors.neutral.black,
   }),
   description: {
     fontSize: 16,
-    lineHeight: '22px',
-    margin: '4px 0 10px',
-    color: theme.palette.colors.neutral[2]
+    lineHeight: "22px",
+    margin: "4px 0 10px",
+    color: theme.palette.colors.neutral[2],
   },
   price: {
     fontSize: 20,
-    lineHeight: '24px',
-    color: theme.palette.colors.neutral.black
+    lineHeight: "24px",
+    color: theme.palette.colors.neutral.black,
   },
   withDiscount: ({ discountPriceColor }) => ({
-    width: 'fit-content',
+    width: "fit-content",
     marginLeft: 4,
-    fontSize: '13px !important',
-    lineHeight: '20px !important',
-    textDecorationLine: 'line-through',
+    fontSize: "13px !important",
+    lineHeight: "20px !important",
+    textDecorationLine: "line-through",
     color: `${discountPriceColor} !important`,
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down("xs")]: {
       fontSize: 12,
-      lineHeight: '24px'
-    }
+      lineHeight: "24px",
+    },
   }),
   priceContainer: {
-    flex: 1
-  }
-}))
+    flex: 1,
+  },
+}));
 
 function CardBody(props) {
   const {
@@ -75,10 +75,10 @@ function CardBody(props) {
     showPrefix,
     priceAndButtonInline,
     buttonWithText = true,
-    hasDiffVariationsPrices
-  } = props
+    hasDiffVariationsPrices,
+  } = props;
 
-  const classes = useStyles({ isFeaturedProduct, discountPriceColor })
+  const classes = useStyles({ isFeaturedProduct, discountPriceColor });
 
   const buttonProps = useMemo(
     () => ({
@@ -88,7 +88,7 @@ function CardBody(props) {
       openSingleProdPage,
       productVariationsFeature,
       _classes,
-      buttonWithText
+      buttonWithText,
     }),
     [
       quantity,
@@ -97,9 +97,9 @@ function CardBody(props) {
       openSingleProdPage,
       productVariationsFeature,
       _classes,
-      buttonWithText
+      buttonWithText,
     ]
-  )
+  );
 
   const PriceAndButtonWrapper = ({ children }) => {
     return (
@@ -110,12 +110,12 @@ function CardBody(props) {
       >
         {children}
       </Grid>
-    )
-  }
+    );
+  };
 
   const PriceButtonContainer = useMemo(() => {
-    return priceAndButtonInline ? PriceAndButtonWrapper : Fragment
-  }, [PriceAndButtonWrapper, priceAndButtonInline])
+    return priceAndButtonInline ? PriceAndButtonWrapper : Fragment;
+  }, [PriceAndButtonWrapper, priceAndButtonInline]);
 
   const Pricetag = memo(({ price, discount, prefix }) => {
     return (
@@ -125,23 +125,23 @@ function CardBody(props) {
             component="p"
             className={clsx(classes.price, _classes?.price)}
           >
-            {' '}
-            {showPrefix ? prefix : ''}
+            {" "}
+            {showPrefix ? prefix : ""}
             {currencySymbol} {parseFloat(discount).toFixed(2)}
           </Typography>
         )}
         <Typography
           className={clsx(classes.price, _classes?.price, {
-            [classes.withDiscount]: discount
+            [classes.withDiscount]: discount,
           })}
         >
-          {showPrefix ? prefix : ''}
+          {showPrefix ? prefix : ""}
           {currencySymbol}
           {parseFloat(price).toFixed(2)}
         </Typography>
       </React.Fragment>
-    )
-  })
+    );
+  });
 
   return (
     <CardContent className={clsx(classes.cardContent, _classes?.cardContent)}>
@@ -172,14 +172,14 @@ function CardBody(props) {
             <Pricetag
               price={cheapestVariant.combination_price}
               discount={cheapestVariant.combination_discount}
-              prefix={hasDiffVariationsPrices ? t('from') + ' ' : ''}
+              prefix={hasDiffVariationsPrices ? t("from") + " " : ""}
             />
           )}
         </Grid>
         {showAddToCartButton && <Actions {...buttonProps} t={t} />}
       </PriceButtonContainer>
     </CardContent>
-  )
+  );
 }
 
-export default memo(CardBody)
+export default memo(CardBody);

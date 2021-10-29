@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import isEmpty from 'lodash/isEmpty'
-import AddToCart from '../../../../../../components/Icons/AddToCart/AddToCart'
-import CustomButton from '../../../../../../components/CustomButton'
+import AddToCart from 'Icons/AddToCart'
+import CustomButton from 'Components/CustomButton'
 import { ButtonBase } from '@material-ui/core'
 
 const Actions = (props) => {

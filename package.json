@@ -27,6 +27,7 @@
     "react-country-flag": "^2.3.0",
     "react-dom": "^16.13.0",
     "react-player": "^2.9.0",
+    "react-progressive-image": "^0.6.0",
     "rollbar-sourcemap-webpack-plugin": "^3.0.0",
     "use-debounce": "^3.4.2"
   }

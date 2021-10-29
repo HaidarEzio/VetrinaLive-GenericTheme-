@@ -8,16 +8,15 @@ import CustomButton from "./CustomButton";
 import PromoPackagesPreview from "./PromoPackage/Preview";
 import PromoPackageCard from "./PromoPackage/Card";
 import ShopPresentation from "./ShopPresentation";
-// import ProductCard from "./ProductCard";
-// import PreviewCategories from "./PreviewComponents/Categories";
-// import PreviewProducts from "./PreviewComponents/Products";
+import ProductCard from "./ProductCard";
+import PreviewCategories from "./PreviewComponents/Categories";
+import PreviewProducts from "./PreviewComponents/Products";
 // import PreviewGallery from "./PreviewComponents/Gallery";
 // import PreviewComponentBanner from "./PreviewComponents/Banner";
 // import FeaturedProductsList from "./FeaturedProductsList";
 // import CarouselButtons from "./FeaturedProductsList/components/CarouselButtons";
 import ContactsButtons from "./ContactsButtons";
-// import Packages from "./WebRoutes/Packages";
-// import Categories from "./WebRoutes/Categories";
+// import Packages from "./WebRoutes/Packages"import Categories from "./WebRoutes/Categories";
 // import ProductsList from "./ProductsList";
 // import ProductsHeader from "./ProductsHeader";
 // import ProductDetailed from "./ProductDetailed";
@@ -33,9 +32,9 @@ export {
   ShopPresentation,
   PromoPackagesPreview,
   PromoPackageCard,
-  // ProductCard,
-  // PreviewCategories,
-  // PreviewProducts,
+  ProductCard,
+  PreviewCategories,
+  PreviewProducts,
   // PreviewGallery,
   // PreviewComponentBanner,
   // FeaturedProductsList,

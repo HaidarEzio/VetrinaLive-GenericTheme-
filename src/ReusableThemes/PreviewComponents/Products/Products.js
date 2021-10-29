@@ -1,42 +1,42 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import { Grid, Typography } from '@material-ui/core'
-import Container from '../../../../src/components/Container/Container'
-import CustomButton from '../../../../src/components/CustomButton/CustomButton'
-import clsx from 'clsx'
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import { Grid, Typography } from "@material-ui/core";
+import Container from "Components/Container";
+import CustomButton from "Components/CustomButton";
+import clsx from "clsx";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: '100px 0',
-    [theme.breakpoints.down('sm')]: {
-      margin: '50px 0'
-    }
+    margin: "100px 0",
+    [theme.breakpoints.down("sm")]: {
+      margin: "50px 0",
+    },
   },
   title: theme.title({
     fontSize: 24,
-    lineHeight: '32px',
+    lineHeight: "32px",
     marginBottom: 40,
-    textAlign: 'center'
+    textAlign: "center",
   }),
   grid: {
-    margin: '0 -12px 16px',
-    width: 'calc(100% + 24px)',
-    [theme.breakpoints.down('xs')]: {
-      margin: '0 -8px 16px',
-      width: 'calc(100% + 16px)',
-      padding: '0 15px'
-    }
+    margin: "0 -12px 16px",
+    width: "calc(100% + 24px)",
+    [theme.breakpoints.down("xs")]: {
+      margin: "0 -8px 16px",
+      width: "calc(100% + 16px)",
+      padding: "0 15px",
+    },
   },
   card: {
-    padding: '0 12px 24px',
-    [theme.breakpoints.down('xs')]: {
-      padding: '0 8px 24px'
-    }
+    padding: "0 12px 24px",
+    [theme.breakpoints.down("xs")]: {
+      padding: "0 8px 24px",
+    },
   },
   button: {
-    width: 'auto'
-  }
-}))
+    width: "auto",
+  },
+}));
 
 const Products = ({
   withTitle,
@@ -47,15 +47,15 @@ const Products = ({
   t,
   Card,
   limit = 4,
-  customClasses
+  customClasses,
 }) => {
-  const classes = useStyles()
+  const classes = useStyles();
   return (
     <section className={clsx(classes.root, customClasses?.root)}>
       <Container>
         {withTitle && (
           <Typography className={clsx(classes.title, customClasses?.title)}>
-            {t('products')}
+            {t("products")}
           </Typography>
         )}
         {children}
@@ -79,7 +79,7 @@ const Products = ({
               type="link"
               href="/[shopKey]/products"
               as={`/${shopKey}/products`}
-              label={t('view_products')}
+              label={t("view_products")}
               className={clsx(classes.button, customClasses?.button)}
               labelClassName={customClasses?.buttonLabel}
             />
@@ -87,7 +87,7 @@ const Products = ({
         )}
       </Container>
     </section>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;

@@ -87,3 +87,15 @@ export const storeItems = (newItem, shopId, key = "cart") => {
 export function isRichText(string = "") {
   return string.includes('"entityMap"');
 }
+
+export function percentageDifference(a, b) {
+  const decreaseValue = a - b;
+  return Math.round((decreaseValue / a) * 100);
+}
+
+export const sliceDescription = (text, limit = 110) => {
+  if (text && text.length > limit) {
+    return `${text.slice(0, limit - 5)}...`;
+  }
+  return text;
+};

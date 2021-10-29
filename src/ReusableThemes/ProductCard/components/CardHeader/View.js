@@ -2,7 +2,7 @@ import Grid from '@material-ui/core/Grid'
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
-import ImageLoader from '../../../../../src/components/ImageLoader'
+import ImageLoader from 'Components/ImageLoader'
 import clsx from 'clsx'
 
 const useStyles = makeStyles((theme) => ({

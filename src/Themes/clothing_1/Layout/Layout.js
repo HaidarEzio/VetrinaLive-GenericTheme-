@@ -4,6 +4,8 @@ import ShopHeader from "Components/ShopHeader";
 import ShopPresentation from "Components/ShopPresentation";
 import PromotionalPackagesPreviewSection from "Components/WebRoutes/Products/components/PromotionalPackagesPreviewSection";
 import ReusableStorytellingSection from "ReusableThemes/ReusableStorytellingSection";
+import Products from "Components/PreviewComponents/Products";
+import Categories from "Components/PreviewComponents/Categories";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,9 +32,15 @@ const useStyles = makeStyles((theme) => ({
 
 const Layout = (props) => {
   const classes = useStyles();
-  const { shop = {}, t, showPromotionalPackages = true, storytelling } = props;
-  const { key } = shop;
-
+  const {
+    shop = {},
+    t,
+    showPromotionalPackages = true,
+    storytelling,
+    mayFetch,
+    producsProps = {},
+  } = props;
+  const { key, categories } = shop;
   return (
     <div className={classes.root}>
       <ShopHeader {...props} />
@@ -50,6 +58,15 @@ const Layout = (props) => {
             }}
           />
         )}
+        <Products
+          t={t}
+          mayFetch={mayFetch}
+          limit={8}
+          shop={shop}
+          {...producsProps}
+        >
+          <Categories categories={categories} shopKey={key} limit={4} t={t} />
+        </Products>
       </main>
     </div>
   );
@@ -208,6 +225,75 @@ Layout.defaultProps = {
     picture:
       "https://images.unsplash.com/photo-1635398500586-6d2c1887eeff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1886&q=80",
     video: "",
+  },
+  producsProps: {
+    products: [
+      {
+        id: 12798,
+        name: "Test new product",
+        key: "Test+new+product-12798",
+        description:
+          '{"blocks":[{"key":"75ff5","text":"gdfahsgrhgfsh","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}}],"entityMap":{}}',
+        shop_id: 922,
+        shop_key: "new-rafio-test",
+        category: { id: 581, title: "cat 1", color: "#009688" },
+        quantity: 203,
+        price: 10,
+        current_price: 2,
+        discounted_price: 2,
+        discounted_price_enabled: true,
+        promo_discount: null,
+        promo_discount_starts_at: null,
+        promo_discount_ends_at: null,
+        promo_discount_enabled: false,
+        order: 1,
+        is_published: true,
+        is_price_variable: false,
+        weights: "",
+        colors: "",
+        variants: [],
+        featured: true,
+        sku: "18914982165498",
+        pictures: [
+          {
+            id: "21M1F76MFeVmy0UrwTcMwNzOKagEFoA7MZZzBykx",
+            "50x50":
+              "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/EwnNsctRyq6TCpUu0tZjxWJP7vYngketDQySQZby.jpeg",
+            "500x600":
+              "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/21M1F76MFeVmy0UrwTcMwNzOKagEFoA7MZZzBykx.jpeg",
+            "1000x1200":
+              "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/21M1F76MFeVmy0UrwTcMwNzOKagEFoA7MZZzBykx.jpeg",
+          },
+          {
+            id: "5yRUcL5uTVmzr4iKnGjgyc9xJq8eGFHcbSV1zPiD",
+            "50x50":
+              "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/I4kQ3br2lQej4cNp8EBEj5Zo7moCrXxgS3Rcfo3k.jpeg",
+            "500x600":
+              "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/5yRUcL5uTVmzr4iKnGjgyc9xJq8eGFHcbSV1zPiD.jpeg",
+            "1000x1200":
+              "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/5yRUcL5uTVmzr4iKnGjgyc9xJq8eGFHcbSV1zPiD.jpeg",
+          },
+          {
+            id: "zxjRKdI1f7gDI19dwRocCZ8ZrjxDwWD9nYIVgJXc",
+            "50x50":
+              "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/8wTDu2vMwsXFJ02H4QEyVra5mqNwHBZsg8tpwuLC.png",
+            "500x600":
+              "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/zxjRKdI1f7gDI19dwRocCZ8ZrjxDwWD9nYIVgJXc.png",
+            "1000x1200":
+              "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/zxjRKdI1f7gDI19dwRocCZ8ZrjxDwWD9nYIVgJXc.png",
+          },
+        ],
+        video: [
+          {
+            url: "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/tahFPCwCuxfeMuWKLBoQkjydegAgXiaIY1DRCEW2.mp4",
+            thumbnail_url:
+              "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/uVOrJfutSvjn8I9MwlyXA5uFdaMFhTfHLgjH6bYf.jpg",
+          },
+        ],
+      },
+    ],
+    total: 1,
+    has_next_page: false,
   },
 };
 
