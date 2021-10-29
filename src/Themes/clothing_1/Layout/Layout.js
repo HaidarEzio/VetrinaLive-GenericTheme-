@@ -6,6 +6,7 @@ import PromotionalPackagesPreviewSection from "Components/WebRoutes/Products/com
 import ReusableStorytellingSection from "ReusableThemes/ReusableStorytellingSection";
 import Products from "Components/PreviewComponents/Products";
 import Categories from "Components/PreviewComponents/Categories";
+import Gallery from "Components/PreviewComponents/Gallery";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -67,6 +68,7 @@ const Layout = (props) => {
         >
           <Categories categories={categories} shopKey={key} limit={4} t={t} />
         </Products>
+        <Gallery t={t} limit={3} shop={shop} />
       </main>
     </div>
   );
@@ -191,7 +193,20 @@ Layout.defaultProps = {
     },
     on_free_trial: false,
     products_allowed: 500,
-    gallery: [],
+    gallery: [
+      {
+        "1000x1200":
+          "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/shops/922/gallery/VRNmrNYsws6XEiUEqJTM0fqrSajhJnjChPniE4WN.jpeg",
+        id: "VRNmrNYsws6XEiUEqJTM0fqrSajhJnjChPniE4WN",
+        order: 2,
+      },
+      {
+        "1000x1200":
+          "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/shops/922/gallery/5br1llG9ZEvSe6mNlUKCTcsuex85IhrfxxN8Dg6u.jpeg",
+        id: "5br1llG9ZEvSe6mNlUKCTcsuex85IhrfxxN8Dg6u",
+        order: 1,
+      },
+    ],
     categories: [
       { id: 465, title: "category 5", color: "#2196f3", order: 5 },
       { id: 464, title: "category 4", color: "#f57c00", order: 4 },

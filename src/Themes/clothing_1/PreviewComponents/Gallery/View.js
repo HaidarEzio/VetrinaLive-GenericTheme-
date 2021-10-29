@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import ReusableGalleryPreview from '../../../../src/ReusableThemes/PreviewComponents/Gallery/View'
+import ReusableGalleryPreview from 'ReusableThemes/PreviewComponents/Gallery/View'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
