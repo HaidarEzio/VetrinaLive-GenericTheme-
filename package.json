@@ -14,9 +14,11 @@
     "@zeit/next-source-maps": "^0.0.4-canary.1",
     "cross-env": "^7.0.2",
     "currency-icons": "^1.0.14",
+    "draft-js": "^0.11.7",
     "express": "^4.16.2",
     "i18next": "^19.6.0",
     "lodash": "^4.17.4",
+    "mui-rte": "^1.26.2",
     "next": "^10.0.2",
     "next-i18next": "^4.5.0",
     "next-images": "^1.4.0",
@@ -24,6 +26,7 @@
     "react": "^16.13.0",
     "react-country-flag": "^2.3.0",
     "react-dom": "^16.13.0",
+    "react-player": "^2.9.0",
     "rollbar-sourcemap-webpack-plugin": "^3.0.0",
     "use-debounce": "^3.4.2"
   }

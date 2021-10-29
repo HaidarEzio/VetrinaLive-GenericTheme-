@@ -83,3 +83,7 @@ export const storeItems = (newItem, shopId, key = "cart") => {
     localStorage.setItem(`${key}-${shopId}`, JSON.stringify(newItem));
   } else localStorage.removeItem(`${key}-${shopId}`);
 };
+
+export function isRichText(string = "") {
+  return string.includes('"entityMap"');
+}
