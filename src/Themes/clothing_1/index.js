@@ -12,7 +12,7 @@ import ProductCard from "./ProductCard";
 import PreviewCategories from "./PreviewComponents/Categories";
 import PreviewProducts from "./PreviewComponents/Products";
 import PreviewGallery from "./PreviewComponents/Gallery";
-// import PreviewComponentBanner from "./PreviewComponents/Banner";
+import PreviewComponentBanner from "./PreviewComponents/Banner";
 import FeaturedProductsList from "./FeaturedProductsList";
 import CarouselButtons from "./FeaturedProductsList/components/CarouselButtons";
 import ContactsButtons from "./ContactsButtons";
@@ -37,7 +37,7 @@ export {
   PreviewCategories,
   PreviewProducts,
   PreviewGallery,
-  // PreviewComponentBanner,
+  PreviewComponentBanner,
   FeaturedProductsList,
   ContactsButtons,
   // Packages,

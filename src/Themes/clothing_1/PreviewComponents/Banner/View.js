@@ -1,10 +1,10 @@
 import React from 'react'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
-import Container from '../../../../src/components/Container/Container'
+import Container from 'Components/Container'
 import { Grid, Typography } from '@material-ui/core'
-import CustomLink from '../../../../src/components/CustomLink'
-import CustomButton from '../../../../src/components/CustomButton/CustomButton'
-import banner from '/public/imgs/clothing_1_banner.png'
+import CustomLink from 'Components/CustomLink'
+import CustomButton from 'Components/CustomButton'
+import banner from 'public/imgs/clothing_1_banner.png'
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -9,6 +9,7 @@ import Products from "Components/PreviewComponents/Products";
 import Categories from "Components/PreviewComponents/Categories";
 import Gallery from "Components/PreviewComponents/Gallery";
 import FullScreenLoader from "Components/FullScreenLoader";
+import Banner from "Components/PreviewComponents/Banner";
 
 const FeaturedProductsList = dynamic(
   () => import("Components/FeaturedProductsList"),
@@ -50,7 +51,7 @@ const Layout = (props) => {
     mayFetch,
     producsProps = {},
     deviceType,
-    featuredProduct
+    featuredProduct,
   } = props;
   const { key, categories } = shop;
   return (
@@ -86,6 +87,7 @@ const Layout = (props) => {
           t={t}
           featuredProduct={featuredProduct}
         />
+        <Banner shop={shop} shopKey={key} t={t} />
       </main>
     </div>
   );
