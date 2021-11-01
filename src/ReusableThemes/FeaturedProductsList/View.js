@@ -1,67 +1,66 @@
-import React from 'react'
-import { Typography } from '@material-ui/core'
-import Container from '../../components/Container/Container'
-import Grid from '@material-ui/core/Grid'
-import Carousel from 'react-multi-carousel'
-import cn from 'clsx'
-import ProductCard from '../../components/ProductCard/ProductCard'
-import { getOr } from 'lodash/fp'
-import { makeStyles } from '@material-ui/core/styles'
-import CarouselButtons from '../../components/FeaturedProductsList/components/CarouselButtons'
+import React from "react";
+import cn from "clsx";
+import Carousel from "react-multi-carousel";
+import getOr from "lodash/fp/getOr";
+import { makeStyles } from "@material-ui/core/styles";
+import { Typography, Grid } from "@material-ui/core";
+import Container from "Components/Container";
+import ProductCard from "Components/ProductCard";
+import CarouselButtons from "Components/FeaturedProductsList/components/CarouselButtons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: '100px 0'
+    margin: "100px 0",
   },
   carouselRoot: {
-    position: 'relative',
-    overflow: 'hidden'
+    position: "relative",
+    overflow: "hidden",
   },
   title: theme.title({
-    textAlign: 'center'
+    textAlign: "center",
   }),
   grid: {
-    position: 'relative',
-    justifyContent: 'center',
-    [theme.breakpoints.down('xs')]: {
-      padding: '25px 0 30px',
-      margin: '0 auto',
-      maxWidth: 265
-    }
+    position: "relative",
+    justifyContent: "center",
+    [theme.breakpoints.down("xs")]: {
+      padding: "25px 0 30px",
+      margin: "0 auto",
+      maxWidth: 265,
+    },
   },
 
   carouselContainer: {
-    position: 'relative',
-    display: 'flex',
-    justifyContent: 'center',
-    width: '100%',
-    [theme.breakpoints.down('xs')]: {
-      justifyContent: 'normal',
-      overflow: 'visible',
-      margin: '0 -12px',
-      width: 'calc(100% + 24px)'
-    }
+    position: "relative",
+    display: "flex",
+    justifyContent: "center",
+    width: "100%",
+    [theme.breakpoints.down("xs")]: {
+      justifyContent: "normal",
+      overflow: "visible",
+      margin: "0 -12px",
+      width: "calc(100% + 24px)",
+    },
   },
   card: {
-    height: '100%',
-    padding: '0 12px'
+    height: "100%",
+    padding: "0 12px",
   },
 
   arrowsBtn: {
-    position: 'absolute',
-    transition: 'opacity 0.3s ease-in-out'
+    position: "absolute",
+    transition: "opacity 0.3s ease-in-out",
   },
   arrows: {
     fontSize: 25,
-    color: theme.palette.colors.white
+    color: theme.palette.colors.white,
   },
   leftArrow: {
-    left: 0
+    left: 0,
   },
   rightArrow: {
-    right: 0
-  }
-}))
+    right: 0,
+  },
+}));
 
 const View = (props) => {
   const {
@@ -71,13 +70,13 @@ const View = (props) => {
     t,
     featuredProducts,
     carousel,
-    _classes
-  } = props
-  const classes = useStyles()
+    _classes,
+  } = props;
+  const classes = useStyles();
   return (
     <div className={cn(classes.root, _classes?.root)}>
       <Typography className={cn(classes.title, _classes?.title)}>
-        {t('featured_products_title')}
+        {t("featured_products_title")}
       </Typography>
       <div className={cn(classes.carouselRoot, _classes?.carouselRoot)}>
         <Container>
@@ -117,14 +116,14 @@ const View = (props) => {
                     triggerEvent={() => {
                       let currentSlide = getOr(
                         null,
-                        ['current', 'state', 'currentSlide'],
+                        ["current", "state", "currentSlide"],
                         carousel
-                      )
+                      );
                       if (featuredProducts.length > 2 && currentSlide) {
                         localStorage.setItem(
-                          'current-carousel-item',
+                          "current-carousel-item",
                           currentSlide
-                        )
+                        );
                       }
                     }}
                     t={t}
@@ -136,7 +135,7 @@ const View = (props) => {
         </Container>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default View
+export default View;

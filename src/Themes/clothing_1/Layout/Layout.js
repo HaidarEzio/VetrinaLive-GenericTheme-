@@ -1,4 +1,5 @@
 import React from "react";
+import dynamic from "next/dynamic";
 import { makeStyles } from "@material-ui/core/styles";
 import ShopHeader from "Components/ShopHeader";
 import ShopPresentation from "Components/ShopPresentation";
@@ -7,6 +8,14 @@ import ReusableStorytellingSection from "ReusableThemes/ReusableStorytellingSect
 import Products from "Components/PreviewComponents/Products";
 import Categories from "Components/PreviewComponents/Categories";
 import Gallery from "Components/PreviewComponents/Gallery";
+import FullScreenLoader from "Components/FullScreenLoader";
+
+const FeaturedProductsList = dynamic(
+  () => import("Components/FeaturedProductsList"),
+  {
+    loading: () => <FullScreenLoader />,
+  }
+);
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,6 +49,8 @@ const Layout = (props) => {
     storytelling,
     mayFetch,
     producsProps = {},
+    deviceType,
+    featuredProduct
   } = props;
   const { key, categories } = shop;
   return (
@@ -69,6 +80,12 @@ const Layout = (props) => {
           <Categories categories={categories} shopKey={key} limit={4} t={t} />
         </Products>
         <Gallery t={t} limit={3} shop={shop} />
+        <FeaturedProductsList
+          shopKey={key}
+          deviceType={deviceType}
+          t={t}
+          featuredProduct={featuredProduct}
+        />
       </main>
     </div>
   );
@@ -309,6 +326,69 @@ Layout.defaultProps = {
     ],
     total: 1,
     has_next_page: false,
+  },
+  featuredProduct: {
+    id: 12798,
+    name: "Test new product",
+    key: "Test+new+product-12798",
+    description:
+      '{"blocks":[{"key":"75ff5","text":"gdfahsgrhgfsh","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}}],"entityMap":{}}',
+    shop_id: 922,
+    shop_key: "new-rafio-test",
+    category: { id: 581, title: "cat 1", color: "#009688" },
+    quantity: 203,
+    price: 10,
+    current_price: 2,
+    discounted_price: 2,
+    discounted_price_enabled: true,
+    promo_discount: null,
+    promo_discount_starts_at: null,
+    promo_discount_ends_at: null,
+    promo_discount_enabled: false,
+    order: 1,
+    is_published: true,
+    is_price_variable: false,
+    weights: "",
+    colors: "",
+    variants: [],
+    featured: true,
+    sku: "18914982165498",
+    pictures: [
+      {
+        id: "21M1F76MFeVmy0UrwTcMwNzOKagEFoA7MZZzBykx",
+        "50x50":
+          "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/EwnNsctRyq6TCpUu0tZjxWJP7vYngketDQySQZby.jpeg",
+        "500x600":
+          "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/21M1F76MFeVmy0UrwTcMwNzOKagEFoA7MZZzBykx.jpeg",
+        "1000x1200":
+          "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/21M1F76MFeVmy0UrwTcMwNzOKagEFoA7MZZzBykx.jpeg",
+      },
+      {
+        id: "5yRUcL5uTVmzr4iKnGjgyc9xJq8eGFHcbSV1zPiD",
+        "50x50":
+          "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/I4kQ3br2lQej4cNp8EBEj5Zo7moCrXxgS3Rcfo3k.jpeg",
+        "500x600":
+          "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/5yRUcL5uTVmzr4iKnGjgyc9xJq8eGFHcbSV1zPiD.jpeg",
+        "1000x1200":
+          "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/5yRUcL5uTVmzr4iKnGjgyc9xJq8eGFHcbSV1zPiD.jpeg",
+      },
+      {
+        id: "zxjRKdI1f7gDI19dwRocCZ8ZrjxDwWD9nYIVgJXc",
+        "50x50":
+          "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/8wTDu2vMwsXFJ02H4QEyVra5mqNwHBZsg8tpwuLC.png",
+        "500x600":
+          "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/zxjRKdI1f7gDI19dwRocCZ8ZrjxDwWD9nYIVgJXc.png",
+        "1000x1200":
+          "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/zxjRKdI1f7gDI19dwRocCZ8ZrjxDwWD9nYIVgJXc.png",
+      },
+    ],
+    video: [
+      {
+        url: "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/tahFPCwCuxfeMuWKLBoQkjydegAgXiaIY1DRCEW2.mp4",
+        thumbnail_url:
+          "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/uVOrJfutSvjn8I9MwlyXA5uFdaMFhTfHLgjH6bYf.jpg",
+      },
+    ],
   },
 };
 

@@ -13,8 +13,8 @@ import PreviewCategories from "./PreviewComponents/Categories";
 import PreviewProducts from "./PreviewComponents/Products";
 import PreviewGallery from "./PreviewComponents/Gallery";
 // import PreviewComponentBanner from "./PreviewComponents/Banner";
-// import FeaturedProductsList from "./FeaturedProductsList";
-// import CarouselButtons from "./FeaturedProductsList/components/CarouselButtons";
+import FeaturedProductsList from "./FeaturedProductsList";
+import CarouselButtons from "./FeaturedProductsList/components/CarouselButtons";
 import ContactsButtons from "./ContactsButtons";
 // import Packages from "./WebRoutes/Packages"
 // import Categories from "./WebRoutes/Categories";
@@ -38,12 +38,12 @@ export {
   PreviewProducts,
   PreviewGallery,
   // PreviewComponentBanner,
-  // FeaturedProductsList,
+  FeaturedProductsList,
   ContactsButtons,
   // Packages,
   // Categories,
   // ProductsList,
   // ProductsHeader,
-  // CarouselButtons,
+  CarouselButtons,
   // ProductDetailed,
 };
