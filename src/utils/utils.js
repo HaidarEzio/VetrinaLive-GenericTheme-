@@ -99,3 +99,5 @@ export const sliceDescription = (text, limit = 110) => {
   }
   return text;
 };
+
+export const number = (value) => value && value !== "null" && /\d/.test(value);

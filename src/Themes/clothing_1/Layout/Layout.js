@@ -10,6 +10,7 @@ import Categories from "Components/PreviewComponents/Categories";
 import Gallery from "Components/PreviewComponents/Gallery";
 import FullScreenLoader from "Components/FullScreenLoader";
 import Banner from "Components/PreviewComponents/Banner";
+import ThemesFooter from "Components/ThemesFooter";
 
 const FeaturedProductsList = dynamic(
   () => import("Components/FeaturedProductsList"),
@@ -89,6 +90,14 @@ const Layout = (props) => {
         />
         <Banner shop={shop} shopKey={key} t={t} />
       </main>
+      <ThemesFooter
+        t={t}
+        shop={shop}
+        _classes={{
+          copyrightText: classes.copyrightText,
+          copyrightLink: classes.copyrightLink,
+        }}
+      />
     </div>
   );
 };
