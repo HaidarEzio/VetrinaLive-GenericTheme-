@@ -1,10 +1,9 @@
 @font-face {
   font-family: "PlayfairDisplay";
   src: local("Playfair Display Bold"), local("PlayfairDisplay-Bold"),
-    url("../../../fonts/PlayfairDisplay/PlayfairDisplay-Bold.woff2")
+    url("public/fonts/PlayfairDisplay/PlayfairDisplay-Bold.woff2")
       format("woff2"),
-    url("../../../fonts/PlayfairDisplay/PlayfairDisplay-Bold.woff")
-      format("woff");
+    url("public/fonts/PlayfairDisplay/PlayfairDisplay-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -13,9 +12,9 @@
 @font-face {
   font-family: "PlayfairDisplay";
   src: local("Playfair Display Regular"), local("PlayfairDisplay-Regular"),
-    url("../../../fonts/PlayfairDisplay/PlayfairDisplay-Regular.woff2")
+    url("public/fonts/PlayfairDisplay/PlayfairDisplay-Regular.woff2")
       format("woff2"),
-    url("../../../fonts/PlayfairDisplay/PlayfairDisplay-Regular.woff")
+    url("public/fonts/PlayfairDisplay/PlayfairDisplay-Regular.woff")
       format("woff");
   font-weight: normal;
   font-style: normal;
@@ -25,8 +24,8 @@
 @font-face {
   font-family: "Montserrat";
   src: local("Montserrat Bold"), local("Montserrat-Bold"),
-    url("../../../fonts/Montserrat/Montserrat-Bold.woff2") format("woff2"),
-    url("../../../fonts/Montserrat/Montserrat-Bold.woff") format("woff");
+    url("public/fonts/Montserrat/Montserrat-Bold.woff2") format("woff2"),
+    url("public/fonts/Montserrat/Montserrat-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -35,8 +34,8 @@
 @font-face {
   font-family: "Montserrat";
   src: local("Montserrat Regular"), local("Montserrat-Regular"),
-    url("../../../fonts/Montserrat/Montserrat-Regular.woff2") format("woff2"),
-    url("../../../fonts/Montserrat/Montserrat-Regular.woff") format("woff");
+    url("public/fonts/Montserrat/Montserrat-Regular.woff2") format("woff2"),
+    url("public/fonts/Montserrat/Montserrat-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
