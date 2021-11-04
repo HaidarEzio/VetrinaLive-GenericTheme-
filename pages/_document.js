@@ -3,12 +3,12 @@ import React from "react";
 import Document, { Head, Html, Main, NextScript } from "next/document";
 import { ServerStyleSheets } from "@material-ui/core/styles";
 
+//! customize html tag and everything inside for every page
 export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
         <Head>
-          <title>Academy exams</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>

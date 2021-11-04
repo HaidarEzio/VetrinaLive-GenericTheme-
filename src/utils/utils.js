@@ -1,4 +1,5 @@
 import isEmpty from "lodash/fp/isEmpty";
+import { last } from "lodash/fp";
 
 export const DEFAULT_THEME = "default_theme";
 export const TOP_BAR_Z_INDEX = 115;
@@ -24,8 +25,11 @@ export const themesList = [
 
 export const isServer = () => typeof window === "undefined";
 
-export const notNull = (value) =>
-  value && value !== "null" && value !== "undefined" && value !== "";
+export const getLastSentenceBySymbol = ({ symbol, link }) => {
+  return last(link.split(symbol).filter((str) => !isEmpty(str)));
+};
+
+export const notNull = (value) => value && value !== "null" && value !== "undefined" && value !== "";
 
 export const usedTheme = (id) => themesList.find((x) => x.id === id);
 
@@ -41,11 +45,7 @@ export function generateInstagramUrl(link) {
     username = link;
   }
 
-  if (
-    !isEmpty(username) &&
-    !username.includes("/") &&
-    !username.includes("@")
-  ) {
+  if (!isEmpty(username) && !username.includes("/") && !username.includes("@")) {
     return `https://instagram.com/${username}`;
   }
 

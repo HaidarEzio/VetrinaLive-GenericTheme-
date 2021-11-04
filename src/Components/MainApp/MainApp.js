@@ -28,6 +28,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+//? this is what's first rendered on the app
+//? having styles, a context hook, and a state for selection
+//? maps over the themes in another file, sends a button for each one
+//? redirects for layout which is dynamic, with a custome link 
 const MainApp = () => {
   const classes = useStyles();
   const { currentTheme, setTheme } = useContext(CustomThemeContext);
@@ -41,15 +45,9 @@ const MainApp = () => {
   return (
     <div className={classes.root}>
       <div className={classes.selecterContainer}>
-        <Typography className={classes.selected}>
-          Selected theme: {selected?.name}
-        </Typography>
+        <Typography className={classes.selected}>Selected theme: {selected?.name}</Typography>
         {themesList.map((theme) => (
-          <Button
-            key={theme.id}
-            className={classes.button}
-            onClick={() => handleClick(theme)}
-          >
+          <Button key={theme.id} className={classes.button} onClick={() => handleClick(theme)}>
             {theme.name}
           </Button>
         ))}
