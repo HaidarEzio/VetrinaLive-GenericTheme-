@@ -21,6 +21,10 @@ export const themesList = [
     name: "Clothing Theme",
     id: "clothing_1",
   },
+  {
+    name: "Generic Theme",
+    id: "generic_1",
+  },
 ];
 
 export const isServer = () => typeof window === "undefined";

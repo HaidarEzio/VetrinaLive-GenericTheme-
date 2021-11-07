@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 //? this is what's first rendered on the app
 //? having styles, a context hook, and a state for selection
 //? maps over the themes in another file, sends a button for each one
-//? redirects for layout which is dynamic, with a custome link 
+//? redirects for layout which is dynamic, with a custome link
 const MainApp = () => {
   const classes = useStyles();
   const { currentTheme, setTheme } = useContext(CustomThemeContext);
