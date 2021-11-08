@@ -5,15 +5,18 @@ const generic_1 = {
   name: "generic_1",
   palette: {
     primary: {
-      main: "#000000",
+      main: "#005C9F",
       opacity: "rgba(0, 0, 0, 0.15)",
     },
     secondary: {
-      main: "#967844",
+      main: "#829199",
       opacity: "rgba(150, 120, 68, 0.5)",
     },
     background: {
       page: "#FFFFFF",
+    },
+    info: {
+      main: "#000000",
     },
     colors: {
       beige: "#F3E2D5",
@@ -22,13 +25,13 @@ const generic_1 = {
     ...reusablePalette,
   },
   typography: {
-    fontFamily: "Montserrat, sans-serif",
+    fontFamily: "SourceSansPro, sans-serif",
     button: {
       fontWeight: 700,
     },
   },
   title: (props) => ({
-    fontFamily: "PlayfairDisplay, sans-serif",
+    fontFamily: "Ubuntu, sans-serif",
     fontWeight: 700,
     color: colors.black[0],
     ...props,

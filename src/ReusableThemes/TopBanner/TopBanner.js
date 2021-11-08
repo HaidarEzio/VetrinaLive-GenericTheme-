@@ -43,25 +43,14 @@ const TopBanner = ({ customClasses, topBarEnabled, topBanner, children }) => {
   const classes = useStyles({ hasChildren: Boolean(children) });
   const theme = useTheme();
   const breakpointsDownSm = useMediaQuery(theme.breakpoints.down("sm"));
-
+  console.log(topBanner.message);
+  //! topbanner message getting logged, but not displayed
   return (
     <div className={clsx(classes.topBanner, customClasses?.topBanner)}>
       <Container className={classes.container}>
-        <Grid
-          container
-          alignItems="center"
-          justify="space-between"
-          wrap="nowrap"
-        >
+        <Grid container alignItems="center" justifyContent="space-between" wrap="nowrap">
           {topBarEnabled ? (
-            <Typography
-              className={clsx(
-                classes.topBannerText,
-                customClasses?.topBannerText
-              )}
-            >
-              {topBanner?.message}
-            </Typography>
+            <Typography className={clsx(classes.topBannerText, customClasses?.topBannerText)}>{topBanner?.message}</Typography>
           ) : (
             <div />
           )}

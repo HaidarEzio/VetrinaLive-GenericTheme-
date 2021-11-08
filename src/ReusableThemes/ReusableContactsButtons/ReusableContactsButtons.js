@@ -18,54 +18,23 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const ReusableContactsButtons = ({
-  phoneNumber,
-  whatsapp_number,
-  instagram_url,
-  facebook_url,
-  customClasses,
-  iconColor,
-}) => {
+const ReusableContactsButtons = ({ phoneNumber, whatsapp_number, instagram_url, facebook_url, customClasses, iconColor }) => {
   const classes = useStyles();
-  const whatsappUrl = whatsapp_number
-    ? `https://wa.me/${whatsapp_number.replace(/\D+/g, "")}`
-    : null;
+  const whatsappUrl = whatsapp_number ? `https://wa.me/${whatsapp_number.replace(/\D+/g, "")}` : null;
 
   return (
-    <div
-      className={clsx(classes.socialContainer, customClasses?.socialContainer)}
-    >
+    <div className={clsx(classes.socialContainer, customClasses?.socialContainer)}>
       <IfSocialLink link={whatsappUrl} customClasses={customClasses}>
-        <WhatsAppIcon
-          fill={iconColor}
-          className={clsx(classes.icon, customClasses?.icon)}
-        />
+        <WhatsAppIcon fill={iconColor} className={clsx(classes.icon, customClasses?.icon)} />
       </IfSocialLink>
       <IfSocialLink link={facebook_url} format="facebook">
-        <FacebookIcon
-          fill={iconColor}
-          className={clsx(classes.icon, customClasses?.icon)}
-        />
+        <FacebookIcon fill={iconColor} className={clsx(classes.icon, customClasses?.icon)} />
       </IfSocialLink>
-      <IfSocialLink
-        link={instagram_url}
-        customClasses={customClasses}
-        format="instagram"
-      >
-        <InstagramIcon
-          fill={iconColor}
-          className={clsx(classes.icon, customClasses?.icon)}
-        />
+      <IfSocialLink link={instagram_url} customClasses={customClasses} format="instagram">
+        <InstagramIcon fill={iconColor} className={clsx(classes.icon, customClasses?.icon)} />
       </IfSocialLink>
-      <IfSocialLink
-        format="phone"
-        link={phoneNumber}
-        customClasses={customClasses}
-      >
-        <PhoneIcon
-          fill={iconColor}
-          className={clsx(classes.icon, customClasses?.icon)}
-        />
+      <IfSocialLink format="phone" link={phoneNumber} customClasses={customClasses}>
+        <PhoneIcon fill={iconColor} className={clsx(classes.icon, customClasses?.icon)} />
       </IfSocialLink>
     </div>
   );
