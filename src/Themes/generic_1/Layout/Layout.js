@@ -202,7 +202,7 @@ Layout.defaultProps = {
   },
   topBanner: {
     is_enabled: false,
-    message: "It's the way i wanted it to go !!",
+    message: "Spedizioni gratuite per ordini superiori a 90€",
   },
   logoUrl: null,
   children: "<ForwardRef />",

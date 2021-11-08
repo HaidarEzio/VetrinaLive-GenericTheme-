@@ -94,7 +94,7 @@ const View = ({ t, logoUrl, className, topBanner, topBarEnabled, shop, mayFetch,
             topBanner: classes.topBanner,
           }}
         >
-          <Grid className={classes.info} container alignItems="flex-start" justify="flex-start">
+          <Grid container alignItems="flex-start">
             <Typography className={classes.text}> {topBanner.message}</Typography>
           </Grid>
 
