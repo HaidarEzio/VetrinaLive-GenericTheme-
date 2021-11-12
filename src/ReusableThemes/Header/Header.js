@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "column",
-    backgroundColor: theme.palette.colors.white,
+    backgroundColor: theme.palette.secondary.main,
     [theme.breakpoints.down("sm")]: {
       padding: "10px 15px",
     },
@@ -39,18 +39,9 @@ const Header = ({ customClasses, logoUrl, children }) => {
   const classes = useStyles();
   return (
     <div className={clsx(classes.header, customClasses?.header)}>
-      <Grid
-        container
-        justify="space-between"
-        className={clsx(classes.container, customClasses?.container)}
-        wrap="nowrap"
-      >
+      <Grid container justify="space-between" className={clsx(classes.container, customClasses?.container)} wrap="nowrap">
         {logoUrl ? (
-          <img
-            src={logoUrl}
-            alt="logo"
-            className={clsx(classes.customerLogo, customClasses?.customerLogo)}
-          />
+          <img src={logoUrl} alt="logo" className={clsx(classes.customerLogo, customClasses?.customerLogo)} />
         ) : (
           <LogoSvg className={clsx(classes.logo, customClasses?.logo)} />
         )}

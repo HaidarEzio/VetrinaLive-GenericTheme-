@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     marginLeft: 16,
-    fontWeight: "normal",
+    fontFamily: "Source Sans Pro Regular, sans serif",
     "& span": {
       textTransform: "uppercase",
     },
@@ -30,21 +30,25 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.colors.white,
   },
   navigationRoot: {
-    borderTop: `1px solid ${theme.palette.colors.neutral[20]}`,
+    backgroundColor: theme.palette.secondary.main,
   },
   navigationButton: {
     padding: "2px 12px",
   },
   navigationButtonLabel: {
+    fontFamily: "Source Sans Pro Regular, sans serif",
+    color: theme.palette.colors.white,
     pointerEvents: "none",
-    color: theme.palette.colors.neutral[100],
   },
   navigationButtonActive: {
+    fontFamily: "Source Sans Pro Black, sans serif",
     color: theme.palette.colors.neutral[100],
   },
   actionsButton: {
     marginRight: 14,
     padding: 10,
+    backgroundColor: "white",
+    borderRadius: 0,
     [theme.breakpoints.down("sm")]: {
       padding: 0,
       marginRight: 24,
@@ -55,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
   },
   info: {
     maxWidth: "40%",
+    fontFamily: "Source Sans Pro Regular, sans serif",
     [theme.breakpoints.down(1275)]: {
       maxWidth: "50%",
       justifyContent: "flex-start",
@@ -117,6 +122,16 @@ const View = ({ t, logoUrl, className, topBanner, topBarEnabled, shop, mayFetch,
       )}
       <header className={classes.root}>
         <Header customClasses={{ header: className }} logoUrl={logoUrl}>
+          <NewNavigation
+            returnToVetrina={returnToVetrina}
+            t={t}
+            customClasses={{
+              root: classes.navigationRoot,
+              button: classes.navigationButton,
+              label: classes.navigationButtonLabel,
+              active: classes.navigationButtonActive,
+            }}
+          />
           <ActionBar
             t={t}
             mayFetch={mayFetch}
@@ -127,16 +142,6 @@ const View = ({ t, logoUrl, className, topBanner, topBarEnabled, shop, mayFetch,
             }}
           />
         </Header>
-        <NewNavigation
-          returnToVetrina={returnToVetrina}
-          t={t}
-          customClasses={{
-            root: classes.navigationRoot,
-            button: classes.navigationButton,
-            label: classes.navigationButtonLabel,
-            active: classes.navigationButtonActive,
-          }}
-        />
       </header>
     </>
   );

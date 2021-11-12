@@ -19,32 +19,32 @@ function useNavigationLinks({ t }) {
     {
       to: "/",
       path: "/[shopKey]",
-      label: "Home",
+      label: "Vetrina",
     },
     {
       to: "/categories",
       path: "/[shopKey]/categories",
-      label: t("category"),
+      label: t("Categories"),
     },
     {
       to: "/products",
       path: "/[shopKey]/products",
-      label: t("products"),
+      label: t("Products"),
     },
     {
       to: "/packages",
       path: "/[shopKey]/packages",
-      label: t("promotional_packages"),
+      label: t("Promotional Packages"),
     },
     {
       to: "/gallery",
       path: "/[shopKey]/gallery",
-      label: t("gallery"),
+      label: t("Gallery"),
     },
     {
       to: "/details",
       path: "/[shopKey]/details",
-      label: t("infoPage"),
+      label: t("Information"),
     },
   ].filter(Boolean);
 

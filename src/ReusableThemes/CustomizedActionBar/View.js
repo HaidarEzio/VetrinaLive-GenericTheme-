@@ -83,13 +83,7 @@ const View = ({
   const breakpointsDownSm = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <Grid
-      container
-      justify="flex-end"
-      wrap="nowrap"
-      alignItems="center"
-      className={clsx(classes.actionBar, customClasses?.actionBar)}
-    >
+    <Grid container justify="flex-end" wrap="nowrap" alignItems="center" className={clsx(classes.actionBar, customClasses?.actionBar)}>
       {isSearch && (
         <div className={classes.search}>
           <Container>
@@ -106,14 +100,6 @@ const View = ({
         </div>
       )}
       <div className={clsx(classes.rightSide, customClasses?.iconWrapper)}>
-        {!hideSearch && (
-          <IconButton
-            onClick={() => openSearch((open) => !open)}
-            className={clsx(classes.buttons, customClasses?.buttons)}
-          >
-            <SearchIcon stroke={iconColor} />
-          </IconButton>
-        )}
         {!hideCart && (
           <CartWithCounter
             onClick={toggleCartDrawer}
@@ -122,19 +108,18 @@ const View = ({
             icon={<ShopBag stroke={iconColor} />}
           />
         )}
+        {!hideSearch && (
+          <IconButton onClick={() => openSearch((open) => !open)} className={clsx(classes.buttons, customClasses?.buttons)}>
+            <SearchIcon stroke={iconColor} />
+          </IconButton>
+        )}
         {!hideAccount && (
-          <IconButton
-            onClick={toggleAccountModal}
-            className={clsx(classes.buttons, customClasses?.buttons)}
-          >
+          <IconButton onClick={toggleAccountModal} className={clsx(classes.buttons, customClasses?.buttons)}>
             <AccountIcon stroke={iconColor} />
           </IconButton>
         )}
         {breakpointsDownSm && !hideMenu && (
-          <IconButton
-            onClick={toggleNavigation}
-            className={clsx(classes.buttons, customClasses?.buttons)}
-          >
+          <IconButton onClick={toggleNavigation} className={clsx(classes.buttons, customClasses?.buttons)}>
             <MenuRounded />
           </IconButton>
         )}
