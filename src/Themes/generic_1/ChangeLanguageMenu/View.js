@@ -30,7 +30,7 @@ const View = ({ t, anchorEl, options, selectedOption, openDropdown, handleCloseM
     <div className={classes.root}>
       <Button onClick={openDropdown} className={classes.button}>
         <Typography className={classes.title}>
-          {t("language")} : <span>{selectedOption?.title.slice(0, 2)}</span>
+          {t("Language")} : <span>{selectedOption?.title.slice(0, 2)}</span>
         </Typography>
         <ExpandMore className={classes.arrow} />
       </Button>

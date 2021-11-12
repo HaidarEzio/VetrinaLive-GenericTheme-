@@ -25,15 +25,14 @@ const generic_1 = {
     ...reusablePalette,
   },
   typography: {
-    fontFamily: "SourceSansPro, sans-serif",
+    fontFamily: "Source Sans Pro Regular, sans-serif",
     button: {
       fontWeight: 700,
     },
   },
   title: (props) => ({
     fontFamily: "Ubuntu, sans-serif",
-    fontWeight: 700,
-    color: colors.black[0],
+    color: colors.white[0],
     ...props,
   }),
   ...reusableComponents,

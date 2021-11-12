@@ -107,7 +107,7 @@ const View = ({ t, logoUrl, className, topBanner, topBarEnabled, shop, mayFetch,
             <ChangeLanguageMenu t={t} color={theme.palette.secondary.main} />
             {currency && (
               <Typography className={classes.title}>
-                {t("currency")} : <span>{currency}</span>
+                {t("Currency")} : <span>{currency}</span>
               </Typography>
             )}
             <ReusableContactsButtons

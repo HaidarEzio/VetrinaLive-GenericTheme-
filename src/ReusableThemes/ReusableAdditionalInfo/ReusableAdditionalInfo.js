@@ -83,18 +83,18 @@ const AdditionalInfo = ({ shop, t, customClasses, iconColor }) => {
 
   const additionalInfo = [
     paymentsActive && {
-      title: t("method_payment"),
+      title: t("Payment Methods"),
       text: paymentsActive,
       icon: <PaymentsMethodsIcon color={iconColor} />,
     },
     deliveryActive && {
-      title: t("shipping"),
+      title: t("Shipping"),
       text: deliveryActive,
       icon: <ShippingIcon color={iconColor} />,
     },
     categoriesLength > 0 && {
-      title: t("category"),
-      text: `${categoriesLength} ${t("categories_available")}`,
+      title: t("Categories"),
+      text: `${categoriesLength} ${t("categories available")}`,
       icon: <CategoriesIcon color={iconColor} />,
     },
   ].filter(Boolean);
@@ -102,34 +102,13 @@ const AdditionalInfo = ({ shop, t, customClasses, iconColor }) => {
   if (additionalInfo?.length === 0) return null;
 
   return (
-    <Grid
-      container
-      justify="center"
-      alignItems="center"
-      className={clsx(classes.additionalInfo, customClasses?.additionalInfo)}
-    >
+    <Grid container justify="center" alignItems="center" className={clsx(classes.additionalInfo, customClasses?.additionalInfo)}>
       {additionalInfo.map(({ icon, title, text }, index) => (
-        <Grid
-          key={index}
-          item
-          xs={12}
-          md={4}
-          className={clsx(
-            classes.additionalInfoItem,
-            customClasses?.additionalInfoItem
-          )}
-        >
+        <Grid key={index} item xs={12} md={4} className={clsx(classes.additionalInfoItem, customClasses?.additionalInfoItem)}>
           {icon}
           <div className={clsx(classes.textBlock, customClasses?.textBlock)}>
-            <Typography
-              className={clsx(classes.infoTitle, customClasses?.infoTitle)}
-            >
-              {title}
-            </Typography>
-            <Typography
-              className={clsx(classes.text, customClasses?.text)}
-              noWrap
-            >
+            <Typography className={clsx(classes.infoTitle, customClasses?.infoTitle)}>{title}</Typography>
+            <Typography className={clsx(classes.text, customClasses?.text)} noWrap>
               {text}
             </Typography>
           </div>

@@ -46,6 +46,39 @@ const Layout = (props) => {
   return (
     <div className={classes.root}>
       <ShopHeader {...props} />
+      <main className={classes.main}>
+        <ShopPresentation shop={shop} t={t} />
+        {/* //*? this is for safekeeping ;)
+         {showPromotionalPackages && (
+          <PromotionalPackagesPreviewSection shop={shop} shopKey={key} t={t} />
+        )}
+        {storytelling && storytelling.enabled && (
+          <ReusableStorytellingSection
+            storytelling={storytelling}
+            customClasses={{
+              img: classes.storytellingImg,
+              title: classes.storytellingTitle,
+            }}
+          />
+        )}
+        <Products
+          t={t}
+          mayFetch={mayFetch}
+          limit={8}
+          shop={shop}
+          {...producsProps}
+        >
+          <Categories categories={categories} shopKey={key} limit={4} t={t} />
+        </Products>
+        <Gallery t={t} limit={3} shop={shop} />
+        <FeaturedProductsList
+          shopKey={key}
+          deviceType={deviceType}
+          t={t}
+          featuredProduct={featuredProduct}
+        />
+        <Banner shop={shop} shopKey={key} t={t} /> */}
+      </main>
     </div>
   );
 };
@@ -56,10 +89,10 @@ Layout.defaultProps = {
   webshopFooterFlag: true,
   shop: {
     id: 825,
-    name: "ltd7@gmail.com",
-    key: "ltd7-gmail-com-1",
+    name: "Generic Business",
+    key: "Generic Business",
     email: "ltd7@gmail.com",
-    description: "",
+    description: "Generic Description",
     whatsapp_number: "380123123123",
     facebook_url: "https://stanton.com/quidem-ut-beatae-facere-voluptas.html",
     instagram_url: "https://stanton.com/quidem-ut-beatae-facere-voluptas.html",
@@ -94,8 +127,13 @@ Layout.defaultProps = {
     is_on: true,
     color: "#FF647C",
     logo_url: null,
-    banner_url: "",
-    banner_meta: { banner_url: "", top_bar: { is_enabled: false } },
+    banner_url:
+      "https://images.unsplash.com/photo-1511317559916-56d5ddb62563?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1386&q=80",
+    banner_meta: {
+      banner_url:
+        "https://images.unsplash.com/photo-1511317559916-56d5ddb62563?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1386&q=80",
+      top_bar: { is_enabled: false },
+    },
     delivery_options: [
       {
         id: 3038,
@@ -193,10 +231,10 @@ Layout.defaultProps = {
     locale: "en",
     owner_id: 830,
     payments: {
-      offline: { is_enabled: true },
+      offline: { is_enabled: false },
       wire_transfer: { is_enabled: false, owner_name: "", iban: "" },
-      paypal: { is_enabled: false, client_id: "" },
-      stripe: { is_enabled: false, account_id: "" },
+      paypal: { is_enabled: true, client_id: "" },
+      stripe: { is_enabled: true, account_id: "" },
       razorpay: { is_enabled: true, key_id: "123123" },
     },
   },

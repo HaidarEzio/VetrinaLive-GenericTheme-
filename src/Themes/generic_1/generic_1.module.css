@@ -12,12 +12,13 @@
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: "Ubuntu";
-  src: local("Ubuntu"), url("/fonts/Ubuntu/Ubuntu-regular.ttf") format("ttf");
+/* @font-face {
+  font-family: "ubuntu";
+  src: local("ubuntu regular"), url("/fonts/Ubuntu/Ubuntu-Regular.ttf") format("ttf");
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
-}
+} */
 /* 
 body {
   font-family: "SourceSansPro, sans serif";
