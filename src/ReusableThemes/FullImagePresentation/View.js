@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
   title: theme.title({
     maxWidth: 700,
     fontFamily: "Ubuntu, sans-serif",
+    fontWeight: 400,
     textAlign: "center",
     marginBottom: 16,
     wordWrap: "break-word",

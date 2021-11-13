@@ -1,17 +1,18 @@
 import React from "react";
 import clsx from "clsx";
 import { Grid, Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import CustomButton from "Components/CustomButton/CustomButton";
 import Container from "Components/Container";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     marginTop: 100,
     marginBottom: 50,
   },
   button: {
     width: "auto",
+    backgroundColor: theme.palette.secondary.main,
   },
   grid: {
     display: "flex",
@@ -23,29 +24,16 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const View = ({
-  t,
-  _classes,
-  packages,
-  shopKey,
-  Card,
-  showRedirectButton,
-  title,
-  customClasses,
-}) => {
+const View = ({ t, _classes, packages, shopKey, Card, showRedirectButton, title, customClasses }) => {
   const classes = useStyles();
+  const theme = useTheme();
   return (
-    <section
-      className={clsx(classes.root, _classes?.root, customClasses?.root)}
-    >
+    <section className={clsx(classes.root, _classes?.root, customClasses?.root)}>
       <Container>
         <Grid container alignItems="center" direction="column">
           {title && (
             <Grid item xs={12}>
-              <Typography
-                variant="h2"
-                className={clsx(classes.title, customClasses?.title)}
-              >
+              <Typography variant="h2" className={clsx(classes.title, customClasses?.title)}>
                 {title}
               </Typography>
             </Grid>
@@ -60,7 +48,7 @@ const View = ({
               type="link"
               href="/[shopKey]/packages"
               as={`/${shopKey}/packages`}
-              label={t("all_promo_packages")}
+              label={t("Show all Promotional Packages")}
               className={clsx(classes.button, customClasses?.button)}
               labelClassName={customClasses?.buttonLabel}
             />

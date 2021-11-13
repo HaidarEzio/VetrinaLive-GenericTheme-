@@ -48,10 +48,8 @@ const Layout = (props) => {
       <ShopHeader {...props} />
       <main className={classes.main}>
         <ShopPresentation shop={shop} t={t} />
+        {showPromotionalPackages && <PromotionalPackagesPreviewSection shop={shop} shopKey={key} t={t} />}
         {/* //*? this is for safekeeping ;)
-         {showPromotionalPackages && (
-          <PromotionalPackagesPreviewSection shop={shop} shopKey={key} t={t} />
-        )}
         {storytelling && storytelling.enabled && (
           <ReusableStorytellingSection
             storytelling={storytelling}
@@ -254,7 +252,7 @@ Layout.defaultProps = {
       "https://images.unsplash.com/photo-1635398500586-6d2c1887eeff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1886&q=80",
     video: "",
   },
-  producsProps: {
+  productsProps: {
     products: [
       {
         id: 12798,
@@ -270,7 +268,7 @@ Layout.defaultProps = {
         current_price: 2,
         discounted_price: 2,
         discounted_price_enabled: true,
-        promo_discount: null,
+        promo_discount: 5,
         promo_discount_starts_at: null,
         promo_discount_ends_at: null,
         promo_discount_enabled: false,

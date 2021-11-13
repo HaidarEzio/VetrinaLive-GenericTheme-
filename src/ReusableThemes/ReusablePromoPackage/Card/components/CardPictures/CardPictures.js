@@ -25,9 +25,7 @@ const CardPictures = ({
       })}
       {productsLeftAmount > 0 && (
         <div className={clsx(pictureClassName, morePictureClassName)}>
-          <Typography
-            className={moreProductLabelClassName}
-          >{`+${productsLeftAmount}`}</Typography>
+          <Typography className={moreProductLabelClassName}>{`+${productsLeftAmount}`}</Typography>
         </div>
       )}
     </div>

@@ -18,12 +18,11 @@ function PromotionalPackagesPreviewSection(props) {
   const promoPackages = [
     {
       active: true,
-      description: "dsfddsf",
+      description: "5% Discount",
       id: 126,
-      name: "asdasd2020",
+      name: "Snacks for those who crave and if text is too...",
       orignal_price: 361.83,
-      picture_url:
-        "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/product-packages/USVcwFeJ5PDgFnHLHol0YhZN8ZNwZc5S8711e4T3.jpeg",
+      picture_url: "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/product-packages/USVcwFeJ5PDgFnHLHol0YhZN8ZNwZc5S8711e4T3.jpeg",
       price: "11.65",
       products: [
         {
@@ -33,12 +32,105 @@ function PromotionalPackagesPreviewSection(props) {
           name: "Max size product",
           pictures: [
             {
-              "50x50":
-                "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12679/mPlBFMzmo3gouJCdNT1bh8PWqTVUpwEGDEeS3yMT.jpeg",
-              "500x600":
-                "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12679/GOS2p9M43mDiyETUopCyUGXENrWxH3JDUju7QrTe.jpeg",
-              "1000x1200":
-                "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12679/GOS2p9M43mDiyETUopCyUGXENrWxH3JDUju7QrTe.jpeg",
+              "50x50": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12679/mPlBFMzmo3gouJCdNT1bh8PWqTVUpwEGDEeS3yMT.jpeg",
+              "500x600": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12679/GOS2p9M43mDiyETUopCyUGXENrWxH3JDUju7QrTe.jpeg",
+              "1000x1200": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12679/GOS2p9M43mDiyETUopCyUGXENrWxH3JDUju7QrTe.jpeg",
+              id: "GOS2p9M43mDiyETUopCyUGXENrWxH3JDUju7QrTe",
+            },
+          ],
+          price: 60,
+          quantity: 110,
+          variants: [],
+        },
+        {
+          category: null,
+          id: 12679,
+          key: "Max+size+product-12679",
+          name: "Max size product",
+          pictures: [
+            {
+              "50x50": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12679/mPlBFMzmo3gouJCdNT1bh8PWqTVUpwEGDEeS3yMT.jpeg",
+              "500x600": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12679/GOS2p9M43mDiyETUopCyUGXENrWxH3JDUju7QrTe.jpeg",
+              "1000x1200": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12679/GOS2p9M43mDiyETUopCyUGXENrWxH3JDUju7QrTe.jpeg",
+              id: "GOS2p9M43mDiyETUopCyUGXENrWxH3JDUju7QrTe",
+            },
+          ],
+          price: 60,
+          quantity: 110,
+          variants: [],
+        },
+        {
+          category: null,
+          id: 12679,
+          key: "Max+size+product-12679",
+          name: "Max size product",
+          pictures: [
+            {
+              "50x50": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12679/mPlBFMzmo3gouJCdNT1bh8PWqTVUpwEGDEeS3yMT.jpeg",
+              "500x600": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12679/GOS2p9M43mDiyETUopCyUGXENrWxH3JDUju7QrTe.jpeg",
+              "1000x1200": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12679/GOS2p9M43mDiyETUopCyUGXENrWxH3JDUju7QrTe.jpeg",
+              id: "GOS2p9M43mDiyETUopCyUGXENrWxH3JDUju7QrTe",
+            },
+          ],
+          price: 60,
+          quantity: 110,
+          variants: [],
+        },
+        {
+          category: null,
+          id: 12679,
+          key: "Max+size+product-12679",
+          name: "Max size product",
+          pictures: [
+            {
+              "50x50": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12679/mPlBFMzmo3gouJCdNT1bh8PWqTVUpwEGDEeS3yMT.jpeg",
+              "500x600": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12679/GOS2p9M43mDiyETUopCyUGXENrWxH3JDUju7QrTe.jpeg",
+              "1000x1200": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12679/GOS2p9M43mDiyETUopCyUGXENrWxH3JDUju7QrTe.jpeg",
+              id: "GOS2p9M43mDiyETUopCyUGXENrWxH3JDUju7QrTe",
+            },
+          ],
+          price: 60,
+          quantity: 110,
+          variants: [],
+        },
+      ],
+    },
+    {
+      active: true,
+      description: "5% Discount",
+      id: 126,
+      name: "New Arrivals",
+      orignal_price: 361.83,
+      picture_url: "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/product-packages/USVcwFeJ5PDgFnHLHol0YhZN8ZNwZc5S8711e4T3.jpeg",
+      price: "11.65",
+      products: [
+        {
+          category: null,
+          id: 12679,
+          key: "Max+size+product-12679",
+          name: "Max size product",
+          pictures: [
+            {
+              "50x50": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12679/mPlBFMzmo3gouJCdNT1bh8PWqTVUpwEGDEeS3yMT.jpeg",
+              "500x600": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12679/GOS2p9M43mDiyETUopCyUGXENrWxH3JDUju7QrTe.jpeg",
+              "1000x1200": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12679/GOS2p9M43mDiyETUopCyUGXENrWxH3JDUju7QrTe.jpeg",
+              id: "GOS2p9M43mDiyETUopCyUGXENrWxH3JDUju7QrTe",
+            },
+          ],
+          price: 60,
+          quantity: 110,
+          variants: [],
+        },
+        {
+          category: null,
+          id: 12679,
+          key: "Max+size+product-12679",
+          name: "Max size product",
+          pictures: [
+            {
+              "50x50": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12679/mPlBFMzmo3gouJCdNT1bh8PWqTVUpwEGDEeS3yMT.jpeg",
+              "500x600": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12679/GOS2p9M43mDiyETUopCyUGXENrWxH3JDUju7QrTe.jpeg",
+              "1000x1200": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12679/GOS2p9M43mDiyETUopCyUGXENrWxH3JDUju7QrTe.jpeg",
               id: "GOS2p9M43mDiyETUopCyUGXENrWxH3JDUju7QrTe",
             },
           ],
@@ -54,9 +146,7 @@ function PromotionalPackagesPreviewSection(props) {
     () =>
       promoPackages?.map((i) => {
         const prices = i?.products?.map((p) => parseFloat(p.price));
-        const totalPrice = !isEmpty(prices)
-          ? prices.reduce((acc, curr) => acc + curr)
-          : 0;
+        const totalPrice = !isEmpty(prices) ? prices.reduce((acc, curr) => acc + curr) : 0;
 
         return {
           ...i,
@@ -74,10 +164,7 @@ function PromotionalPackagesPreviewSection(props) {
   const { name } = useTheme();
   const { PromoPackagesPreview: View } = themes[name] || {};
 
-  const rest = useMemo(
-    () => ({ t, _classes, isMobile, packages, shopKey }),
-    [t, _classes, isMobile, packages, shopKey]
-  );
+  const rest = useMemo(() => ({ t, _classes, isMobile, packages, shopKey }), [t, _classes, isMobile, packages, shopKey]);
 
   if (isEmpty(promoPackages)) return null;
 
@@ -85,14 +172,7 @@ function PromotionalPackagesPreviewSection(props) {
     <View
       {...rest}
       Card={({ promoPackage, width, index }) => (
-        <SingleCard
-          t={t}
-          width={width}
-          shopKey={shopKey}
-          currency={symbol}
-          promoPackage={promoPackage}
-          index={index}
-        />
+        <SingleCard t={t} width={width} shopKey={shopKey} currency={symbol} promoPackage={promoPackage} index={index} />
       )}
     />
   );

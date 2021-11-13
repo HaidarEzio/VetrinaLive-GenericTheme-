@@ -33,6 +33,7 @@ const generic_1 = {
   },
   title: (props) => ({
     fontFamily: "Ubuntu, sans-serif",
+    fontWeight: 500,
     color: colors.white[0],
     ...props,
   }),
