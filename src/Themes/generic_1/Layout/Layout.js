@@ -49,7 +49,6 @@ const Layout = (props) => {
       <main className={classes.main}>
         <ShopPresentation shop={shop} t={t} />
         {showPromotionalPackages && <PromotionalPackagesPreviewSection shop={shop} shopKey={key} t={t} />}
-        {/* //*? this is for safekeeping ;)
         {storytelling && storytelling.enabled && (
           <ReusableStorytellingSection
             storytelling={storytelling}
@@ -59,6 +58,7 @@ const Layout = (props) => {
             }}
           />
         )}
+        {/* //*? this is for safekeeping ;)
         <Products
           t={t}
           mayFetch={mayFetch}
@@ -246,8 +246,12 @@ Layout.defaultProps = {
     enabled: true,
     id: 10,
     layout: 1,
-    description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.cs  https://www.youtube.com/watch?v=ETOt7-a0MjM`,
-    title: "storytelling test",
+    description: `Our mission: to inspire and nurture the human spirit – one person, one cup and one neighborhood at a time.
+    Here are the principles of how we live that every day...
+    Our Coffee It has always been, and will always be, about quality. We’re passionate about ethically sourcing the finest coffee beans, roasting them with great care, and improving the lives of people who grow them. We care deeply about all of this; our work is never done.
+    Our Partners We’re called partners, because it’s not just a job, it’s our passion. Together, we embrace diversity to create a place where each of us can be ourselves. We always treat each other with respect and dignity. And we hold each other to that standard.
+    Our Partners We’re called partners, because it’s not just a job, it’s our passion. Together, we embrace diversity to create a place where each of us can be ourselves.`,
+    title: "Our Mission Statement",
     picture:
       "https://images.unsplash.com/photo-1635398500586-6d2c1887eeff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1886&q=80",
     video: "",
