@@ -58,6 +58,8 @@ const View = (props) => {
         description: classes.description,
       }}
       iconColor={theme.palette.primary.main}
+      circleLogo
+      objectFit="none"
       {...props}
     />
   );

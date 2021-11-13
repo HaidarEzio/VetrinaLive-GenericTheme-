@@ -20,6 +20,7 @@ const generic_1 = {
     },
     colors: {
       beige: "#F3E2D5",
+      whiteish: "#E2E8EC",
       ...colors,
     },
     ...reusablePalette,

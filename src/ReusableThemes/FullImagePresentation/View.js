@@ -6,6 +6,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import ReusableAdditionalInfo from "../ReusableAdditionalInfo";
 import CustomButton from "Components/CustomButton";
+import Image from "next/image"; //displaying the image using next/image
 
 const useStyles = makeStyles((theme) => ({
   shopPresentationRoot: ({ url }) => ({
@@ -44,10 +45,19 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 545,
     width: "100%",
   },
+  //* took too much time on this, got the code from one of the other branches
+  circleShape: {
+    height: 80,
+    width: 80,
+    border: `3px solid #DE0446`,
+    borderRadius: "50%",
+    backgroundColor: theme.palette.colors.whiteish,
+  },
+  //* took too much time on this, got the code from one of the other branches
 }));
 
 const View = (props) => {
-  const { shop, IsOnlineModal, getShopBanner, t, _classes, showDescription = true, showButton = false, iconColor } = props;
+  const { shop, IsOnlineModal, getShopBanner, t, _classes, showDescription = true, showButton = false, iconColor, circleLogo } = props;
   const { name: shopName, banner_url: bannerUrl, category, key, description } = shop || {};
   const url = isEmpty(bannerUrl) ? getShopBanner(category) : bannerUrl;
   const classes = useStyles({ url });
@@ -63,6 +73,8 @@ const View = (props) => {
             {description}
           </Typography>
         )}
+        {/* small story-like circle*/}
+        {circleLogo && <div className={clsx(classes.circleShape, _classes?.circleShape)}></div>}
         {showButton && <CustomButton type="link" href="/[shopKey]/products" as={`/${key}/products`} label={t("view_shop")} />}
       </Grid>
       <ReusableAdditionalInfo iconColor={iconColor} customClasses={_classes} shop={shop} t={t} />
