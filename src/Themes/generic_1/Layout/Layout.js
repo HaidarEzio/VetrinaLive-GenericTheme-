@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Layout = (props) => {
   const classes = useStyles();
-  const { shop = {}, t, showPromotionalPackages = true, storytelling, mayFetch, producsProps = {}, deviceType, featuredProduct } = props;
+  const { shop = {}, t, showPromotionalPackages = true, storytelling, mayFetch, productsProps = {}, deviceType, featuredProduct } = props;
   const { key, categories } = shop;
   return (
     <div className={classes.root}>
@@ -58,16 +58,10 @@ const Layout = (props) => {
             }}
           />
         )}
-        {/* //*? this is for safekeeping ;)
-        <Products
-          t={t}
-          mayFetch={mayFetch}
-          limit={8}
-          shop={shop}
-          {...producsProps}
-        >
+        <Products t={t} mayFetch={mayFetch} limit={8} shop={shop} {...productsProps}>
           <Categories categories={categories} shopKey={key} limit={4} t={t} />
         </Products>
+        {/* //*? this is for safekeeping ;)
         <Gallery t={t} limit={3} shop={shop} />
         <FeaturedProductsList
           shopKey={key}
