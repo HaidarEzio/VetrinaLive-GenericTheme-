@@ -38,37 +38,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Products = ({
-  withTitle,
-  children,
-  products,
-  showButton,
-  shopKey,
-  t,
-  Card,
-  limit = 4,
-  customClasses,
-}) => {
+const Products = ({ withTitle, children, products, showButton, shopKey, t, Card, limit = 4, customClasses }) => {
   const classes = useStyles();
   return (
     <section className={clsx(classes.root, customClasses?.root)}>
       <Container>
-        {withTitle && (
-          <Typography className={clsx(classes.title, customClasses?.title)}>
-            {t("products")}
-          </Typography>
-        )}
+        {withTitle && <Typography className={clsx(classes.title, customClasses?.title)}>{t("Products")}</Typography>}
         {children}
         <Grid container className={clsx(classes.grid, customClasses?.grid)}>
           {products.slice(0, limit).map((product) => (
-            <Grid
-              item
-              xs={6}
-              md={4}
-              lg={3}
-              key={product.id}
-              className={clsx(classes.card, customClasses?.card)}
-            >
+            <Grid item xs={6} md={4} lg={3} key={product.id} className={clsx(classes.card, customClasses?.card)}>
               <Card {...product} productKey={product.key} />
             </Grid>
           ))}

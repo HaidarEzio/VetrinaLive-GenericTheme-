@@ -5,13 +5,14 @@ import ReusableCategories from "ReusableThemes/PreviewComponents/ReusableCategor
 const useStyles = makeStyles((theme) => ({
   rows: {
     margin: `${theme.spacing(5)}px 0`,
+    justifyContent: "space-between",
   },
   button: ({ showBtn }) => ({
-    maxWidth: 175,
+    maxWidth: 250,
     maxHeight: 42,
-    margin: `0 ${theme.spacing(1.5)}px`,
-    padding: `${theme.spacing(1.5)}px 24px`,
-    border: `1px solid ${theme.palette.colors.neutral[30]}`,
+    padding: "40px 62px",
+    backgroundColor: theme.palette.secondary.main,
+    color: theme.palette.colors.white,
     [theme.breakpoints.down("md")]: {
       marginBottom: theme.spacing(3),
     },
@@ -25,12 +26,14 @@ const useStyles = makeStyles((theme) => ({
         width: showBtn ? "calc(100% - 24px)" : "calc(50% - 24px)",
       },
     },
+    "&:hover": {
+      backgroundColor: theme.palette.colors.whiteish,
+      color: theme.palette.secondary.main,
+    },
   }),
   text: {
-    fontWeight: 700,
     fontSize: 16,
     lineHeight: "20px",
-    color: theme.palette.colors.black[0],
   },
   allCategories: {
     textOverflow: "unset",

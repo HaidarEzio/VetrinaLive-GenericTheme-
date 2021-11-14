@@ -1,16 +1,18 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import Products from 'ReusableThemes/PreviewComponents/Products'
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Products from "ReusableThemes/PreviewComponents/Products";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
-  title: {},
+  title: {
+    fontSize: 36,
+  },
   grid: {},
-  card: {}
-}))
+  card: {},
+}));
 
 const View = (props) => {
-  const classes = useStyles()
+  const classes = useStyles();
   return (
     <Products
       {...props}
@@ -18,10 +20,10 @@ const View = (props) => {
         root: classes.root,
         title: classes.title,
         grid: classes.grid,
-        card: classes.card
+        card: classes.card,
       }}
     />
-  )
-}
+  );
+};
 
-export default View
+export default View;
