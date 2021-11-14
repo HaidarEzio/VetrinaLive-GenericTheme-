@@ -69,7 +69,7 @@ function CardBody(props) {
     openSingleProdPage,
     isFeaturedProduct = false,
     hideDescription,
-    showAddToCartButton = false,
+    showAddToCartButton = true,
     productVariationsFeature,
     discountPriceColor,
     showPrefix,
@@ -90,24 +90,12 @@ function CardBody(props) {
       _classes,
       buttonWithText,
     }),
-    [
-      quantity,
-      variants,
-      addItemToCart,
-      openSingleProdPage,
-      productVariationsFeature,
-      _classes,
-      buttonWithText,
-    ]
+    [quantity, variants, addItemToCart, openSingleProdPage, productVariationsFeature, _classes, buttonWithText]
   );
 
   const PriceAndButtonWrapper = ({ children }) => {
     return (
-      <Grid
-        container
-        className={_classes?.priceAndButton}
-        justify="space-between"
-      >
+      <Grid container className={_classes?.priceAndButton} justify="space-between">
         {children}
       </Grid>
     );
@@ -121,10 +109,7 @@ function CardBody(props) {
     return (
       <React.Fragment>
         {discount > 0 && (
-          <Typography
-            component="p"
-            className={clsx(classes.price, _classes?.price)}
-          >
+          <Typography component="p" className={clsx(classes.price, _classes?.price)}>
             {" "}
             {showPrefix ? prefix : ""}
             {currencySymbol} {parseFloat(discount).toFixed(2)}
@@ -145,27 +130,12 @@ function CardBody(props) {
 
   return (
     <CardContent className={clsx(classes.cardContent, _classes?.cardContent)}>
-      <Typography
-        ref={titleRef}
-        className={clsx(classes.title, _classes?.title)}
-        variant="h3"
-      >
+      <Typography ref={titleRef} className={clsx(classes.title, _classes?.title)} variant="h3">
         {name}
       </Typography>
-      {!hideDescription && (
-        <Typography
-          className={clsx(classes.description, _classes?.description)}
-        >
-          {sliceDescription(_description, 60)}
-        </Typography>
-      )}
+      {!hideDescription && <Typography className={clsx(classes.description, _classes?.description)}>{sliceDescription(_description, 60)}</Typography>}
       <PriceButtonContainer>
-        <Grid
-          container
-          wrap="nowrap"
-          alignItems="flex-end"
-          className={clsx(classes.priceContainer, _classes?.priceContainer)}
-        >
+        <Grid container wrap="nowrap" alignItems="flex-end" className={clsx(classes.priceContainer, _classes?.priceContainer)}>
           {isEmpty(cheapestVariant) ? (
             <Pricetag price={price} discount={withDiscount} />
           ) : (

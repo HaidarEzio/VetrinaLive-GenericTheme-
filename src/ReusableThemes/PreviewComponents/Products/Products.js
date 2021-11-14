@@ -58,7 +58,7 @@ const Products = ({ withTitle, children, products, showButton, shopKey, t, Card,
               type="link"
               href="/[shopKey]/products"
               as={`/${shopKey}/products`}
-              label={t("view_products")}
+              label={t("View all products")}
               className={clsx(classes.button, customClasses?.button)}
               labelClassName={customClasses?.buttonLabel}
             />

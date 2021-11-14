@@ -9,6 +9,9 @@ const useStyles = makeStyles((theme) => ({
   },
   grid: {},
   card: {},
+  button: {
+    backgroundColor: theme.palette.secondary.main,
+  },
 }));
 
 const View = (props) => {
@@ -21,6 +24,7 @@ const View = (props) => {
         title: classes.title,
         grid: classes.grid,
         card: classes.card,
+        button: classes.button,
       }}
     />
   );

@@ -43,48 +43,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const View = ({
-  t,
-  shopKey,
-  open,
-  selected,
-  showButton,
-  toggleDialog,
-  filteredItems,
-  withoutContainer = false,
-  _classes,
-}) => {
+const View = ({ t, shopKey, open, selected, showButton, toggleDialog, filteredItems, withoutContainer = false, _classes }) => {
   const classes = useStyles();
 
-  const Wrapper = useMemo(
-    () => (withoutContainer ? Fragment : Container),
-    [withoutContainer]
-  );
+  const Wrapper = useMemo(() => (withoutContainer ? Fragment : Container), [withoutContainer]);
   return (
     <section className={cn(classes.root, _classes?.root)}>
       <Wrapper>
-        <Typography className={cn(classes.title, _classes?.title)}>
-          {t("gallery")}
-        </Typography>
-        <Grid
-          container
-          justify="center"
-          className={cn(classes.cardsRoot, _classes?.cardsRoot)}
-        >
+        <Typography className={cn(classes.title, _classes?.title)}>{t("gallery")}</Typography>
+        <Grid container justify="center" className={cn(classes.cardsRoot, _classes?.cardsRoot)}>
           {!isEmpty(filteredItems) &&
             filteredItems?.map((img, i) => (
-              <Grid
-                item
-                xs={12}
-                md={4}
-                key={i}
-                className={cn(classes.card, _classes?.card)}
-              >
-                <GalleryItem
-                  image={img}
-                  toggleDialog={toggleDialog}
-                  className={_classes?.media}
-                />
+              <Grid item xs={12} md={4} key={i} className={cn(classes.card, _classes?.card)}>
+                <GalleryItem image={img} toggleDialog={toggleDialog} className={_classes?.media} />
               </Grid>
             ))}
           <PreviewDialog open={open} onClose={toggleDialog} image={selected} />
