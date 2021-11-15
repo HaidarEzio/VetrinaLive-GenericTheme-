@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   powered: ({ color }) => ({
     padding: 16,
     textAlign: "center",
-    borderTop: `1px solid ${color || theme.palette.colors.white}`,
+    fontFamily: "Source Sans Pro Black, sans-serif",
   }),
   menu: {
     padding: "55px 0",
@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
     margin: 0,
     paddingRight: 100,
     listStyle: "none",
+    textDecoration: "none",
     "&:last-of-type": {
       paddingRight: 0,
     },
@@ -46,14 +47,17 @@ const useStyles = makeStyles((theme) => ({
   },
   listItem: {
     marginBottom: theme.spacing(1),
+    "& *": { textDecoration: "none" },
   },
   label: ({ color }) => ({
     fontSize: 14,
     lineHeight: "20px",
+
     color: color || theme.palette.colors.neutral[10],
   }),
   title: ({ color }) => ({
     fontWeight: 700,
+
     color: color || theme.palette.colors.white,
     textTransform: "uppercase",
     [theme.breakpoints.down("sm")]: {
@@ -62,6 +66,7 @@ const useStyles = makeStyles((theme) => ({
   }),
   button: {
     textTransform: "none",
+    textDecoration: "none",
     padding: 0,
     textAlign: "left",
     display: "block",
@@ -85,19 +90,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ThemesFooter = ({
-  t,
-  contacts,
-  menu,
-  socials,
-  pay_with,
-  goTo,
-  background,
-  color,
-  bannerAuthor,
-  bannerAuthorLink,
-  _classes,
-}) => {
+const ThemesFooter = ({ t, contacts, menu, socials, pay_with, goTo, background, color, bannerAuthor, bannerAuthorLink, _classes }) => {
   const classes = useStyles({ background, color });
   const SHOW_IMAGES_COPYRIGHT = bannerAuthor && bannerAuthorLink;
   const formattedSocials = socials.map((social) => {
@@ -173,9 +166,7 @@ const ThemesFooter = ({
             <div className={classes.navigation}>
               <ul className={classes.list}>
                 <li className={classes.listItem}>
-                  <Typography className={clsx(classes.label, classes.title)}>
-                    {t("menu")}
-                  </Typography>
+                  <Typography className={clsx(classes.label, classes.title, _classes?.title)}>{t("menu")}</Typography>
                 </li>
                 {menu.map((item, i) => (
                   <li key={i} className={classes.listItem}>
@@ -191,18 +182,9 @@ const ThemesFooter = ({
                 ))}
               </ul>
               <ul className={clsx(classes.list, classes.payWith)}>
-                <li
-                  className={clsx(classes.listItem, classes.payWithItemTitle)}
-                >
-                  <Typography
-                    noWrap
-                    className={clsx(
-                      classes.label,
-                      classes.title,
-                      _classes?.title
-                    )}
-                  >
-                    {t("pay_with")}
+                <li className={clsx(classes.listItem, classes.payWithItemTitle)}>
+                  <Typography noWrap className={clsx(classes.label, classes.title, _classes?.title)}>
+                    {t("Pay With")}
                   </Typography>
                 </li>
                 {pay_with.map(({ img, label }, i) => (
@@ -214,18 +196,11 @@ const ThemesFooter = ({
             </div>
           </Grid>
         </Grid>
-        {SHOW_IMAGES_COPYRIGHT && (
-          <ReusablePhotoCredit
-            t={t}
-            _classes={_classes}
-            bannerAuthor={bannerAuthor}
-            bannerAuthorLink={bannerAuthorLink}
-          />
-        )}
+        {SHOW_IMAGES_COPYRIGHT && <ReusablePhotoCredit t={t} _classes={_classes} bannerAuthor={bannerAuthor} bannerAuthorLink={bannerAuthorLink} />}
       </Container>
       <div className={classes.powered}>
         <Typography noWrap className={clsx(classes.label, _classes?.label)}>
-          {t("powered_by")} Vetrina Live
+          {t("Powered by")} Vetrina Live
         </Typography>
       </div>
     </footer>

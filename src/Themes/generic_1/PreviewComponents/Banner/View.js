@@ -8,7 +8,7 @@ import banner from "public/imgs/clothing_1_banner.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: "10px 0",
+    marginBottom: "100px",
     [theme.breakpoints.down("sm")]: {
       margin: "5px 0",
     },

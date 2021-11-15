@@ -1,6 +1,6 @@
 import React from "react";
 import dynamic from "next/dynamic";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import ShopHeader from "Components/ShopHeader";
 import ShopPresentation from "Components/ShopPresentation";
 import PromotionalPackagesPreviewSection from "Components/WebRoutes/Products/components/PromotionalPackagesPreviewSection";
@@ -37,10 +37,14 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 0,
   },
   storytellingTitle: theme.title(),
+  title: {
+    fontFamily: "Source Sans Pro Black, sans-serif",
+  },
 }));
 
 const Layout = (props) => {
   const classes = useStyles();
+  const theme = useTheme();
   const {
     shop = {},
     t,
@@ -77,14 +81,17 @@ const Layout = (props) => {
       </main>
       <ThemesFooter
         t={t}
+        background={theme.palette.colors.whiteish}
+        color={theme.palette.colors.neutral[80]}
         shop={shop}
         _classes={{
           copyrightText: classes.copyrightText,
           copyrightLink: classes.copyrightLink,
+          title: classes.title,
         }}
-        />
-        {/* //*? this is for safekeeping ;)
-        */}
+      />
+      {/* //*? this is for safekeeping ;)
+       */}
     </div>
   );
 };
@@ -150,15 +157,15 @@ Layout.defaultProps = {
     id: 825,
     name: "Generic Business",
     key: "Generic Business",
-    email: "ltd7@gmail.com",
+    email: "generic@store.com",
     description: "Generic Description",
-    whatsapp_number: "380123123123",
+    whatsapp_number: "+91 123 456 789",
     facebook_url: "https://stanton.com/quidem-ut-beatae-facere-voluptas.html",
     instagram_url: "https://stanton.com/quidem-ut-beatae-facere-voluptas.html",
-    address: "aaa",
+    address: " 71 Penningtom Lane Vernoon Rockville CT 06030",
     civic_number: "22",
     city: "ccc",
-    phone: "380123123123",
+    phone: "+91 123 456 789",
     zipcode: "12322",
     province: "43",
     region: "",

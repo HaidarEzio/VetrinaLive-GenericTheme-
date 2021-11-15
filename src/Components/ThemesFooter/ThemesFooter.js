@@ -10,58 +10,41 @@ import maestro from "public/imgs/pay-with/maestro.svg";
 import ThemesFooterView from "ReusableThemes/ThemesFooter";
 
 const ThemesFooter = ({ t, background, color, _classes, shop }) => {
-  const {
-    address,
-    civic_number: civicNr,
-    city,
-    province,
-    zipcode,
-    phone,
-    email,
-    whatsapp_number,
-    facebook_url,
-    instagram_url,
-  } = shop;
+  const { address, civic_number: civicNr, city, province, zipcode, phone, email, whatsapp_number, facebook_url, instagram_url } = shop;
 
   const bannerAuthor = get("banner_meta.banner_author_name", shop);
   const bannerAuthorLink = get("banner_meta.banner_author_link", shop);
 
   const getFullAddress = useMemo(() => {
-    const addr = [address, civicNr, city, province, zipcode].filter((item) =>
-      notNull(item)
-    );
+    const addr = [address, civicNr, city, province, zipcode].filter((item) => notNull(item));
     return addr.length > 0 ? addr.join(", ") : null;
   }, [address, civicNr, city, province, zipcode]);
 
-  const phoneNumber = number(phone)
-    ? `tel:+${phone.replace(/\D+/g, "")}`
-    : null;
-  const whatsappUrl = number(whatsapp_number)
-    ? `https://wa.me/${whatsapp_number.replace(/\D+/g, "")}`
-    : null;
+  const phoneNumber = number(phone) ? `tel:+${phone.replace(/\D+/g, "")}` : null;
+  const whatsappUrl = number(whatsapp_number) ? `https://wa.me/${whatsapp_number.replace(/\D+/g, "")}` : null;
 
   const { links: menu, goTo } = useNavigationLinks({ t });
 
   const contacts = [
     {
-      label: t("contact"),
+      label: t("Contact"),
       isTitle: true,
     },
     getFullAddress && {
-      label: `${t("address")} : ${getFullAddress}`,
+      label: `${t("Address")} : ${getFullAddress}`,
     },
     phone && {
-      label: `${t("tel_number")} : ${phone}`,
+      label: `${t("Phone")} : ${phone}`,
       href: phoneNumber,
     },
     email && {
-      label: `${t("email_label")} : ${email}`,
+      label: `${t("Email")} : ${email}`,
     },
   ].filter(Boolean);
 
   const socials = [
     {
-      label: t("social"),
+      label: t("Social"),
       isTitle: true,
     },
     facebook_url && {
@@ -112,14 +95,7 @@ const ThemesFooter = ({ t, background, color, _classes, shop }) => {
     bannerAuthorLink,
   };
 
-  return (
-    <ThemesFooterView
-      background={background}
-      color={color}
-      _classes={_classes}
-      {...props}
-    />
-  );
+  return <ThemesFooterView background={background} color={color} _classes={_classes} {...props} />;
 };
 
 /*
