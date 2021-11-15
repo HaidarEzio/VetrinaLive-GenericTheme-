@@ -4,7 +4,7 @@ import Container from "Components/Container";
 import { Grid, Typography } from "@material-ui/core";
 import CustomLink from "Components/CustomLink";
 import CustomButton from "Components/CustomButton";
-import banner from "public/imgs/clothing_1_banner.png";
+import banner from "public/imgs/generic/F.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {

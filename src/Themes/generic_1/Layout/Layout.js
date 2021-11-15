@@ -11,6 +11,17 @@ import Gallery from "Components/PreviewComponents/Gallery";
 import FullScreenLoader from "Components/FullScreenLoader";
 import Banner from "Components/PreviewComponents/Banner";
 import ThemesFooter from "Components/ThemesFooter";
+//? Assets
+import G1 from "public/imgs/generic/g1.png";
+import G2 from "public/imgs/generic/g2.png";
+import G3 from "public/imgs/generic/g3.png";
+import G4 from "public/imgs/generic/g4.png";
+import G5 from "public/imgs/generic/g5.png";
+import G6 from "public/imgs/generic/g6.png";
+import G7 from "public/imgs/generic/g7.png";
+import G8 from "public/imgs/generic/g8.png";
+import S1 from "public/imgs/generic/s.png";
+import M1 from "public/imgs/generic/m1.png";
 
 const FeaturedProductsList = dynamic(() => import("Components/FeaturedProductsList"), {
   loading: () => <FullScreenLoader />,
@@ -124,21 +135,21 @@ const oneProduct = {
   pictures: [
     {
       id: "21M1F76MFeVmy0UrwTcMwNzOKagEFoA7MZZzBykx",
-      "50x50": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/EwnNsctRyq6TCpUu0tZjxWJP7vYngketDQySQZby.jpeg",
-      "500x600": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/21M1F76MFeVmy0UrwTcMwNzOKagEFoA7MZZzBykx.jpeg",
-      "1000x1200": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/21M1F76MFeVmy0UrwTcMwNzOKagEFoA7MZZzBykx.jpeg",
+      "50x50": S1,
+      "500x600": S1,
+      "1000x1200": S1,
     },
     {
       id: "5yRUcL5uTVmzr4iKnGjgyc9xJq8eGFHcbSV1zPiD",
-      "50x50": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/I4kQ3br2lQej4cNp8EBEj5Zo7moCrXxgS3Rcfo3k.jpeg",
-      "500x600": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/5yRUcL5uTVmzr4iKnGjgyc9xJq8eGFHcbSV1zPiD.jpeg",
-      "1000x1200": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/5yRUcL5uTVmzr4iKnGjgyc9xJq8eGFHcbSV1zPiD.jpeg",
+      "50x50": S1,
+      "500x600": S1,
+      "1000x1200": S1,
     },
     {
       id: "zxjRKdI1f7gDI19dwRocCZ8ZrjxDwWD9nYIVgJXc",
-      "50x50": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/8wTDu2vMwsXFJ02H4QEyVra5mqNwHBZsg8tpwuLC.png",
-      "500x600": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/zxjRKdI1f7gDI19dwRocCZ8ZrjxDwWD9nYIVgJXc.png",
-      "1000x1200": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/products/12798/zxjRKdI1f7gDI19dwRocCZ8ZrjxDwWD9nYIVgJXc.png",
+      "50x50": S1,
+      "500x600": S1,
+      "1000x1200": S1,
     },
   ],
   video: [
@@ -275,53 +286,58 @@ Layout.defaultProps = {
     products_allowed: 500,
     gallery: [
       {
-        "1000x1200": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/shops/922/gallery/VRNmrNYsws6XEiUEqJTM0fqrSajhJnjChPniE4WN.jpeg",
+        "1000x1200": G1,
         id: "VRNmrNYsws6XEiUEqJTM0fqrSajhJnjChPniE4WN",
-        order: 2,
-      },
-      {
-        "1000x1200": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/shops/922/gallery/5br1llG9ZEvSe6mNlUKCTcsuex85IhrfxxN8Dg6u.jpeg",
-        id: "5br1llG9ZEvSe6mNlUKCTcsuex85IhrfxxN8Dg6u",
         order: 1,
       },
       {
-        "1000x1200": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/shops/922/gallery/VRNmrNYsws6XEiUEqJTM0fqrSajhJnjChPniE4WN.jpeg",
+        "1000x1200": G2,
         id: "VRNmrNYsws6XEiUEqJTM0fqrSajhJnjChPniE4WN",
-        order: 2,
-      },
-      {
-        "1000x1200": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/shops/922/gallery/5br1llG9ZEvSe6mNlUKCTcsuex85IhrfxxN8Dg6u.jpeg",
-        id: "5br1llG9ZEvSe6mNlUKCTcsuex85IhrfxxN8Dg6u",
         order: 1,
       },
       {
-        "1000x1200": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/shops/922/gallery/VRNmrNYsws6XEiUEqJTM0fqrSajhJnjChPniE4WN.jpeg",
+        "1000x1200": G3,
         id: "VRNmrNYsws6XEiUEqJTM0fqrSajhJnjChPniE4WN",
-        order: 2,
-      },
-      {
-        "1000x1200": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/shops/922/gallery/5br1llG9ZEvSe6mNlUKCTcsuex85IhrfxxN8Dg6u.jpeg",
-        id: "5br1llG9ZEvSe6mNlUKCTcsuex85IhrfxxN8Dg6u",
         order: 1,
       },
       {
-        "1000x1200": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/shops/922/gallery/VRNmrNYsws6XEiUEqJTM0fqrSajhJnjChPniE4WN.jpeg",
+        "1000x1200": G4,
         id: "VRNmrNYsws6XEiUEqJTM0fqrSajhJnjChPniE4WN",
-        order: 2,
-      },
-      {
-        "1000x1200": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/shops/922/gallery/5br1llG9ZEvSe6mNlUKCTcsuex85IhrfxxN8Dg6u.jpeg",
-        id: "5br1llG9ZEvSe6mNlUKCTcsuex85IhrfxxN8Dg6u",
         order: 1,
       },
       {
-        "1000x1200": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/shops/922/gallery/VRNmrNYsws6XEiUEqJTM0fqrSajhJnjChPniE4WN.jpeg",
+        "1000x1200": G5,
         id: "VRNmrNYsws6XEiUEqJTM0fqrSajhJnjChPniE4WN",
-        order: 2,
+        order: 1,
       },
       {
-        "1000x1200": "https://vetrinalive-test.s3.eu-central-1.amazonaws.com/shops/922/gallery/5br1llG9ZEvSe6mNlUKCTcsuex85IhrfxxN8Dg6u.jpeg",
-        id: "5br1llG9ZEvSe6mNlUKCTcsuex85IhrfxxN8Dg6u",
+        "1000x1200": G6,
+        id: "VRNmrNYsws6XEiUEqJTM0fqrSajhJnjChPniE4WN",
+        order: 1,
+      },
+      {
+        "1000x1200": G7,
+        id: "VRNmrNYsws6XEiUEqJTM0fqrSajhJnjChPniE4WN",
+        order: 1,
+      },
+      {
+        "1000x1200": G8,
+        id: "VRNmrNYsws6XEiUEqJTM0fqrSajhJnjChPniE4WN",
+        order: 1,
+      },
+      {
+        "1000x1200": G1,
+        id: "VRNmrNYsws6XEiUEqJTM0fqrSajhJnjChPniE4WN",
+        order: 1,
+      },
+      {
+        "1000x1200": G1,
+        id: "VRNmrNYsws6XEiUEqJTM0fqrSajhJnjChPniE4WN",
+        order: 1,
+      },
+      {
+        "1000x1200": G1,
+        id: "VRNmrNYsws6XEiUEqJTM0fqrSajhJnjChPniE4WN",
         order: 1,
       },
     ],
@@ -360,8 +376,7 @@ Layout.defaultProps = {
     Our Partners We’re called partners, because it’s not just a job, it’s our passion. Together, we embrace diversity to create a place where each of us can be ourselves. We always treat each other with respect and dignity. And we hold each other to that standard.
     Our Partners We’re called partners, because it’s not just a job, it’s our passion. Together, we embrace diversity to create a place where each of us can be ourselves.`,
     title: "Our Mission Statement",
-    picture:
-      "https://images.unsplash.com/photo-1635398500586-6d2c1887eeff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1886&q=80",
+    picture: M1,
     video: "",
   },
   productsProps: {

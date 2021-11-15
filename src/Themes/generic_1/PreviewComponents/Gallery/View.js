@@ -10,11 +10,22 @@ const useStyles = makeStyles((theme) => ({
   }),
   cardsRoot: {},
   card: {
-    height: 265,
-    [theme.breakpoints.down("sm")]: {
-      marginBottom: 20,
+    padding: "0 4px",
+    flexBasis: "20.83%",
+    height: "266px",
+    borderRadius: "5px",
+    marginBottom: "8px",
+    [theme.breakpoints.up("md")]: {
+      "&:first-child": {
+        flexBasis: "37.5%",
+      },
+      "&:last-child ": {
+        flexBasis: "37.5%",
+      },
+    },
+    [theme.breakpoints.down("md")]: {
+      flexBasis: "50%",
       height: 190,
-      padding: "0 16px",
       "&:last-of-type": {
         marginBottom: 0,
       },

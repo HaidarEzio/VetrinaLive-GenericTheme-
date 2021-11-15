@@ -21,10 +21,19 @@ const useStyles = makeStyles((theme) => ({
   }),
   grid: {},
   carouselContainer: {
+    display: "flex",
+    justifyContent: "normal",
     "& ul": {
       display: "flex",
       justifyContent: "center",
       listStyle: "none",
+      paddingLeft: "0",
+    },
+    "& .react-multi-carousel-item": {
+      opacity: "0.50",
+    },
+    "& .react-multi-carousel-item--active": {
+      opacity: "1",
     },
   },
   card: {},
