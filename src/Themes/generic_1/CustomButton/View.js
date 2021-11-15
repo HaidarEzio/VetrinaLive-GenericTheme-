@@ -4,14 +4,7 @@ import ReusableCustomButton from "ReusableThemes/ReusableCustomButton";
 
 const View = (props) => {
   const theme = useTheme();
-  const {
-    boxShadow = undefined,
-    backgroundColor = theme.palette.primary.main,
-    height = 50,
-    borderRadius = 0,
-    color = "white",
-    ...restProps
-  } = props;
+  const { boxShadow = undefined, backgroundColor = theme.palette.primary.main, height = 50, borderRadius = 0, color, ...restProps } = props;
   return (
     <ReusableCustomButton
       boxShadow={boxShadow}

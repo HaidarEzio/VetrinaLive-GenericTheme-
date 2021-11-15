@@ -1,67 +1,70 @@
-import React from 'react'
-import { makeStyles, useTheme } from '@material-ui/core/styles'
-import Container from 'Components/Container'
-import { Grid, Typography } from '@material-ui/core'
-import CustomLink from 'Components/CustomLink'
-import CustomButton from 'Components/CustomButton'
-import banner from 'public/imgs/clothing_1_banner.png'
+import React from "react";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import Container from "Components/Container";
+import { Grid, Typography } from "@material-ui/core";
+import CustomLink from "Components/CustomLink";
+import CustomButton from "Components/CustomButton";
+import banner from "public/imgs/clothing_1_banner.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: '100px 0',
-    [theme.breakpoints.down('sm')]: {
-      margin: '50px 0'
+    margin: "10px 0",
+    [theme.breakpoints.down("sm")]: {
+      margin: "5px 0",
     },
-    [theme.breakpoints.down('xs')]: {
-      marginBottom: 0
-    }
+    [theme.breakpoints.down("xs")]: {
+      marginBottom: 0,
+    },
   },
   title: theme.title({
-    fontSize: 24,
-    lineHeight: '32px',
-    color: theme.palette.colors.black[0],
+    fontSize: 36,
+    lineHeight: "40px",
+    color: theme.palette.colors.white,
     marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(3)
+    marginBottom: theme.spacing(3),
+    marginLeft: 20,
+    fontWeight: 400,
   }),
   description: theme.title({
     fontSize: 16,
     fontWeight: 400,
-    lineHeight: '24px',
-    color: theme.palette.colors.black[0]
+    lineHeight: "24px",
   }),
   btn: {
-    width: 'auto'
+    width: "374px",
+    padding: "0px 28px",
+    color: theme.palette.primary.main,
   },
   cover: ({ banner }) => ({
     height: 575,
-    width: '100%',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
+    width: "100%",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
     backgroundImage: `url(${banner})`,
-    [theme.breakpoints.down('sm')]: {
-      height: 300
-    }
+    [theme.breakpoints.down("sm")]: {
+      height: 300,
+    },
   }),
   details: {
-    height: '100%',
+    height: "100%",
     marginLeft: 20,
-    display: 'flex',
-    padding: '70px 0',
-    alignItems: 'center',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    background: theme.palette.colors.beige,
-    [theme.breakpoints.down('sm')]: {
+    display: "flex",
+    padding: "30px 0",
+    alignItems: "center",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    background: theme.palette.primary.main,
+    [theme.breakpoints.down("sm")]: {
       marginLeft: 0,
-      marginTop: 20
-    }
-  }
-}))
+      marginTop: 20,
+    },
+  },
+}));
 
 const View = ({ shopKey, maxDiscount, t }) => {
-  const classes = useStyles({ banner })
-  const theme = useTheme()
+  const classes = useStyles({ banner });
+  const theme = useTheme();
 
   return (
     <section className={classes.root}>
@@ -72,22 +75,14 @@ const View = ({ shopKey, maxDiscount, t }) => {
           </Grid>
           <Grid item xs={12} md={6} lg={5}>
             <div className={classes.details}>
-              {maxDiscount ? (
-                <Typography className={classes.description}>
-                  {t('save_up', { percent: maxDiscount })}
-                </Typography>
-              ) : null}
-              <Typography noWrap className={classes.title}>
-                {t('discover_collections')}
-              </Typography>
-              <CustomLink
-                href="/[shopKey]/products"
-                as={`/${shopKey}/products`}
-              >
+              {maxDiscount ? <Typography className={classes.description}>{t("save_up", { percent: maxDiscount })}</Typography> : null}
+              <Typography className={classes.title}>{t("Discover our offers and save up to 50% on your purchase.")}</Typography>
+              <CustomLink href="/[shopKey]/products" as={`/${shopKey}/products`}>
                 <CustomButton
                   className={classes.btn}
-                  backgroundColor={theme.palette.secondary.main}
-                  label={t('shop_now')}
+                  backgroundColor={theme.palette.colors.white}
+                  color={theme.palette.primary.main}
+                  label={t("Shop Now")}
                 />
               </CustomLink>
             </div>
@@ -95,7 +90,7 @@ const View = ({ shopKey, maxDiscount, t }) => {
         </Grid>
       </Container>
     </section>
-  )
-}
+  );
+};
 
-export default View
+export default View;

@@ -73,9 +73,18 @@ const Layout = (props) => {
         </Products>
         <Gallery t={t} limit={8} shop={shop} />
         <FeaturedProductsList shopKey={key} deviceType={deviceType} t={t} featuredProduct={featuredProduct} />
-        {/* //*? this is for safekeeping ;)
-        <Banner shop={shop} shopKey={key} t={t} /> */}
+        <Banner shop={shop} shopKey={key} t={t} />
       </main>
+      <ThemesFooter
+        t={t}
+        shop={shop}
+        _classes={{
+          copyrightText: classes.copyrightText,
+          copyrightLink: classes.copyrightLink,
+        }}
+        />
+        {/* //*? this is for safekeeping ;)
+        */}
     </div>
   );
 };
@@ -92,7 +101,7 @@ const oneProduct = {
   price: 105,
   current_price: 144,
   discounted_price: 144,
-  discounted_price_enabled: true,
+  discounted_price_enabled: false,
   promo_discount: 5,
   promo_discount_starts_at: null,
   promo_discount_ends_at: null,
