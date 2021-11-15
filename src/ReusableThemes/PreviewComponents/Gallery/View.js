@@ -50,7 +50,7 @@ const View = ({ t, shopKey, open, selected, showButton, toggleDialog, filteredIt
   return (
     <section className={cn(classes.root, _classes?.root)}>
       <Wrapper>
-        <Typography className={cn(classes.title, _classes?.title)}>{t("gallery")}</Typography>
+        <Typography className={cn(classes.title, _classes?.title)}>{t("Our Gallery")}</Typography>
         <Grid container justify="center" className={cn(classes.cardsRoot, _classes?.cardsRoot)}>
           {!isEmpty(filteredItems) &&
             filteredItems?.map((img, i) => (
@@ -66,7 +66,7 @@ const View = ({ t, shopKey, open, selected, showButton, toggleDialog, filteredIt
               type="link"
               href="/[shopKey]/gallery"
               as={`/${shopKey}/gallery`}
-              label={t("view_gallery")}
+              label={t("View Gallery")}
               className={cn(classes.button, _classes?.button)}
               labelClassName={_classes?.buttonLabel}
             />

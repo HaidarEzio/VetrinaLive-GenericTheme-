@@ -10,16 +10,16 @@ const FeaturedProductsList = (props) => {
   const { deviceType, t, shopKey, featuredProduct } = props;
   const { name } = useTheme();
   const { FeaturedProductsList: View } = themes[name] || {};
-  const featuredProducts = [featuredProduct];
+  // const featuredProducts = [featuredProduct];
+  //! it's an array in the props, and if we put it in array again it won't load
+  //! so, just switching names xD
+  const featuredProducts = featuredProduct;
   const sliderLength = featuredProducts?.length;
 
   const add = useCallback(
     (item) => {
       if (item.colors !== "" || item.weights !== "") {
-        return Router.push(
-          "/[shopKey]/[productKey]",
-          `/${shopKey}/${item.key}`
-        );
+        return Router.push("/[shopKey]/[productKey]", `/${shopKey}/${item.key}`);
       }
     },
     [shopKey]
@@ -52,11 +52,7 @@ const FeaturedProductsList = (props) => {
   useSwipeSlider(carousel);
 
   const onClickCard = useCallback(() => {
-    let currentSlide = getOr(
-      null,
-      ["current", "state", "currentSlide"],
-      carousel
-    );
+    let currentSlide = getOr(null, ["current", "state", "currentSlide"], carousel);
     if (featuredProducts.length > 2 && currentSlide) {
       localStorage.setItem("current-carousel-item", currentSlide);
     }

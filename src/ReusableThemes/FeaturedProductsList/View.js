@@ -76,7 +76,7 @@ const View = (props) => {
   return (
     <div className={cn(classes.root, _classes?.root)}>
       <Typography className={cn(classes.title, _classes?.title)}>
-        {t("featured_products_title")}
+        {t("Featured")}
       </Typography>
       <div className={cn(classes.carouselRoot, _classes?.carouselRoot)}>
         <Container>

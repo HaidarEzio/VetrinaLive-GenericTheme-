@@ -1,32 +1,37 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import ReusableFeaturedProductsList from 'ReusableThemes/FeaturedProductsList'
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import ReusableFeaturedProductsList from "ReusableThemes/FeaturedProductsList";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: '100px 0'
+    margin: "100px 0",
+    padding: "30px 0",
+    backgroundColor: theme.palette.colors.whiteish,
   },
   carouselRoot: {
     marginBottom: 40,
-    [theme.breakpoints.down('xs')]: {
-      marginBottom: 30
-    }
+    [theme.breakpoints.down("xs")]: {
+      marginBottom: 30,
+    },
   },
   title: theme.title({
-    fontSize: 24,
-    lineHeight: '32px',
-    marginBottom: 40
+    fontSize: 36,
+    lineHeight: "32px",
+    marginBottom: 40,
   }),
   grid: {},
   carouselContainer: {
-    justifyContent: 'initial'
+    "& ul": {
+      display: "flex",
+      justifyContent: "center",
+      listStyle: "none",
+    },
   },
-  card: {}
-}))
+  card: {},
+}));
 
 const FeaturedProductsList = (props) => {
-  const classes = useStyles()
-
+  const classes = useStyles();
   return (
     <ReusableFeaturedProductsList
       withTitle
@@ -36,11 +41,11 @@ const FeaturedProductsList = (props) => {
         title: classes.title,
         grid: classes.grid,
         carouselContainer: classes.carouselContainer,
-        card: classes.card
+        card: classes.card,
       }}
       {...props}
     />
-  )
-}
+  );
+};
 
-export default FeaturedProductsList
+export default FeaturedProductsList;

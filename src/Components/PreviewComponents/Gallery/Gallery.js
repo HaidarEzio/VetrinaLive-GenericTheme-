@@ -3,7 +3,7 @@ import useGallery from "Components/GalleryItemList/useGallery";
 import { useTheme } from "@material-ui/styles";
 import * as themes from "Themes/exportTheme";
 
-const Gallery = ({ t, limit = 3, shop }) => {
+const Gallery = ({ t, limit = 8, shop }) => {
   const { selected, open, toggleDialog, imgArray } = useGallery({ shop });
   const { gallery, key } = shop || {};
 
